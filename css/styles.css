@@ -232,11 +232,15 @@ a {
 
 .nav__link button {
   padding: 0.5rem 1.5rem;
-  background-color: red;
+  background-color: rgb(153, 10, 10);
   border: none;
   border-radius: 0.4em;
   color: var(--white-color);
   font-weight: var(--font-semi-bold);
+}
+
+.nav__link button:hover{
+  background-color: var(--black-color);
 }
 
 .nav__link:hover {
