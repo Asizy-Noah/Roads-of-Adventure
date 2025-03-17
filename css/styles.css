@@ -443,7 +443,7 @@ a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: green !important; /* Green background */
+  background-color: var(--black-color) !important; /* Green background */
   color: white !important; /* White arrow */
   border-radius: 50%; /* Circular buttons */
   width: 40px;
