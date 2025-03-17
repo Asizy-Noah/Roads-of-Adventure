@@ -417,3 +417,11 @@ a {
     column-gap: 2rem;
   }
 }
+
+/* --Home Carousel */
+
+@media screen and (max-width: 1118px) {
+.home-carousel {
+  margin-top: 6.8em;
+}
+}
