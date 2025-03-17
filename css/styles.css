@@ -221,7 +221,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color .3s;
   transition: all 0.3s ease-out;
 }
 
@@ -296,6 +295,7 @@ a {
   background-color: #e6e5e5;
   text-decoration: none;
   color:yellow;
+  transform: scale(110%);
 }
 
 .dropdown__menu, 
