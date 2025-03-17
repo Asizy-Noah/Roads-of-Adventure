@@ -468,3 +468,17 @@ a {
 .owl-prev:hover, .owl-next:hover {
   background-color: darkgreen !important;
 }
+
+/* ----Other Packages Carousel----- */
+.prev-btn, .next-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.prev-btn:hover, .next-btn:hover {
+  background-color: #0056b3;
+}
