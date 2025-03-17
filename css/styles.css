@@ -300,6 +300,7 @@ a {
   text-decoration: none;
   color:yellow;
   transform: scale(110%);
+  border-radius: 5px;
 }
 
 .dropdown__menu, 
