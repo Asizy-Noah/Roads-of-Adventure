@@ -228,6 +228,7 @@ a {
 .nav__link:hover {
   color: yellow;
   text-decoration: none;
+  transform: scale(110%);
 }
 
 .nav__link button {
