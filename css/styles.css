@@ -69,7 +69,7 @@ a {
   top: 02em;
   left: 0;
   width: 100%;
-  background-color: var(--black-color);
+  background-color: var(--white-color);
   box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
   z-index: var(--z-fixed);
 }
@@ -136,7 +136,7 @@ a {
 .nav__logo, 
 .nav__burger, 
 .nav__close {
-  color: var(--white-color);
+  color: var(--black-color);
 }
 
 .nav__data {
@@ -208,14 +208,14 @@ a {
     width: 0;
   }
   .nav__list {
-    background-color: var(--black-color);
+    background-color: var(--white-color);
     padding-top: 1rem;
   }
 }
 
 .nav__link {
-  color: var(--white-color);
-  background-color: var(--black-color);
+  color: var(--black-color);
+  background-color: var(--white-color);
   font-weight: var(--font-semi-bold);
   padding: 1.25rem 1.5rem;
   display: flex;
