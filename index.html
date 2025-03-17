@@ -14,6 +14,10 @@
     <!--=============== REMIXICONS ===============-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -358,65 +362,54 @@
                 <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destination</h6>
                 <h1>Explore Our Top Destinations</h1>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="img/destination-1.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Uganda</h5>
-                            <span>100 Packages</span>
-                        </a>
-                    </div>
+            <div class="owl-carousel destination-carousel">
+                <div class="destination-item position-relative overflow-hidden mb-2">
+                    <img class="img-fluid" src="img/destination-1.jpg" alt="">
+                    <a class="destination-overlay text-white text-decoration-none" href="">
+                        <h5 class="text-white">Uganda</h5>
+                        <span>100 Packages</span>
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="img/destination-2.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Kenya</h5>
-                            <span>87 Packages</span>
-                        </a>
-                    </div>
+                <div class="destination-item position-relative overflow-hidden mb-2">
+                    <img class="img-fluid" src="img/destination-2.jpg" alt="">
+                    <a class="destination-overlay text-white text-decoration-none" href="">
+                        <h5 class="text-white">Kenya</h5>
+                        <span>87 Packages</span>
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="img/destination-3.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Tanzania</h5>
-                            <span>72 Packages</span>
-                        </a>
-                    </div>
+                <div class="destination-item position-relative overflow-hidden mb-2">
+                    <img class="img-fluid" src="img/destination-3.jpg" alt="">
+                    <a class="destination-overlay text-white text-decoration-none" href="">
+                        <h5 class="text-white">Tanzania</h5>
+                        <span>72 Packages</span>
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="img/destination-4.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Rwanda</h5>
-                            <span>70 Packages</span>
-                        </a>
-                    </div>
+                <div class="destination-item position-relative overflow-hidden mb-2">
+                    <img class="img-fluid" src="img/destination-4.jpg" alt="">
+                    <a class="destination-overlay text-white text-decoration-none" href="">
+                        <h5 class="text-white">Rwanda</h5>
+                        <span>70 Packages</span>
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="img/destination-5.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">South Africa</h5>
-                            <span>65 Packages</span>
-                        </a>
-                    </div>
+                <div class="destination-item position-relative overflow-hidden mb-2">
+                    <img class="img-fluid" src="img/destination-5.jpg" alt="">
+                    <a class="destination-overlay text-white text-decoration-none" href="">
+                        <h5 class="text-white">South Africa</h5>
+                        <span>65 Packages</span>
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="img/destination-6.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">DRC</h5>
-                            <span>54 Packages</span>
-                        </a>
-                    </div>
+                <div class="destination-item position-relative overflow-hidden mb-2">
+                    <img class="img-fluid" src="img/destination-6.jpg" alt="">
+                    <a class="destination-overlay text-white text-decoration-none" href="">
+                        <h5 class="text-white">DRC</h5>
+                        <span>54 Packages</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Destination Start -->
+    <!-- Destination End -->
+
 
 
     <!-- Service Start -->
@@ -930,6 +923,10 @@
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
@@ -937,6 +934,24 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".destination-carousel").owlCarousel({
+                loop: true, // Infinite loop
+                margin: 10, // Spacing between items
+                nav: true, // Show next/prev buttons
+                dots: true, // Show dots navigation
+                autoplay: true, // Auto-slide
+                autoplayTimeout: 3000, // 3 seconds per slide
+                responsive: {
+                    0: { items: 1 }, // 1 item on mobile
+                    600: { items: 2 }, // 2 items on tablets
+                    1000: { items: 3 } // 3 items on desktops
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
