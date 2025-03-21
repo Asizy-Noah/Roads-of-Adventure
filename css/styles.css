@@ -440,7 +440,7 @@ a {
   transform: translateY(-50%);
   background: var(--black-color) !important; 
   color: white !important;
-  font-size: 24px;
+  font-size: 50px;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -499,3 +499,8 @@ a {
   margin-left: 5px; /* Space between stars and text */
 }
 
+@media (max-width: 698px) {
+  .package-item {
+    max-width: 600px; 
+  }
+}
