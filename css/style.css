@@ -53,11 +53,16 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+.bg-light.shadow {
+  border-radius: 5px; /* Adjust as needed */
+  overflow: hidden; /* Ensures inner content doesn't break the border-radius */
+}
+
 /* Apply rounded corners */
 .custom-select,
 .form-control,
 .btn-primary {
-    border-radius: 25px !important; /* Adjust the radius for desired roundness */
+    border-radius: 5px !important; /* Adjust the radius for desired roundness */
 }
 
 /* Ensure uniform padding for a sleek look */
@@ -68,7 +73,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 /* Adjust button styling */
 .btn-primary {
-    border-radius: 25px;
+    border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
 }
