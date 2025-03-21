@@ -53,6 +53,26 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+/* Apply rounded corners */
+.custom-select,
+.form-control,
+.btn-primary {
+    border-radius: 25px !important; /* Adjust the radius for desired roundness */
+}
+
+/* Ensure uniform padding for a sleek look */
+.custom-select,
+.form-control {
+    padding: 10px 20px;
+}
+
+/* Adjust button styling */
+.btn-primary {
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
