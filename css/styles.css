@@ -439,7 +439,7 @@ a {
 
 /* ---Destinations Carousel */
 /* Position the next and prev buttons on the sides */
-.owl-prev, .owl-next {
+.destination-carousel .owl-prev, .owl-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -455,30 +455,44 @@ a {
 }
 
 /* Position next button on the right */
-.owl-next {
+.destination-carousel .owl-next {
   right: -30px;
 }
 
 /* Position prev button on the left */
-.owl-prev {
+.destination-carousel .owl-prev {
   left: -30px;
 }
 
 /* Hover effect */
-.owl-prev:hover, .owl-next:hover {
+.destination-carousel .owl-prev:hover, .destination-carousel .owl-next:hover {
   background-color: darkgreen !important;
 }
 
 /* ----Other Packages Carousel----- */
-.prev-btn, .next-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 18px;
+/* Custom navigation buttons */
+.package-carousel .owl-prev, .package-carousel .owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--black-color) !important; 
+  color: white !important;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
   border-radius: 50%;
-  transition: 0.3s;
+  cursor: pointer;
+  display: block !important; /* Force visibility */
+  border: none; /* Debugging */
 }
-.prev-btn:hover, .next-btn:hover {
-  background-color: #0056b3;
+
+.package-carousel .owl-prev {
+  left: -30px !important;
 }
+
+.package-carousel .owl-next {
+  right: -30px !important;
+}
+
