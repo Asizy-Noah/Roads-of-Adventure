@@ -459,3 +459,42 @@ a {
   right: -30px !important;
 }
 
+/* Increase width of package container */
+.package-item {
+  width: 300px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+/* Rating styling */
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.stars {
+  display: flex;
+}
+
+.stars i {
+  font-size: 12px;
+  margin-right: 2px;
+}
+
+/* Ensure rating and button are same width */
+.book-btn, .rating {
+  flex: 1;
+  text-align: center;
+}
+
+.book-btn {
+  margin-left: 10px; /* Adjust this value for the desired gap */
+}
+
+.rating-text {
+  font-weight: bold;
+  margin-left: 5px; /* Space between stars and text */
+}
+
