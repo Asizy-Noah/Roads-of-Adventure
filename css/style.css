@@ -638,7 +638,7 @@ pre code {
   height: 100vh;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .container, .container-sm {
     max-width: 540px;
   }
@@ -660,7 +660,7 @@ pre code {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 90%;
   }
-}
+} */
 
 .row {
   display: flex;

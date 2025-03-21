@@ -449,6 +449,7 @@ a {
   cursor: pointer;
   display: block !important; /* Force visibility */
   border: none; /* Debugging */
+  overflow: hidden;
 }
 
 .package-carousel .owl-prev {
@@ -461,7 +462,7 @@ a {
 
 /* Increase width of package container */
 .package-item {
-  width: 300px; /* Adjust as needed */
+  width: 310px; /* Adjust as needed */
   margin: 0 auto;
 }
 
