@@ -499,6 +499,10 @@ a {
   margin-left: 5px; /* Space between stars and text */
 }
 
+.text-dark:hover a{
+  color: var(--black-color);
+}
+
 @media (max-width: 698px) {
   .package-item {
     max-width: 600px; 
