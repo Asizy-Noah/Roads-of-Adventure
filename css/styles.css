@@ -518,6 +518,10 @@ a {
   transition: transform 0.3s ease-in-out;
 }
 
+.our-partners h6 {
+  margin-bottom: 2em;
+}
+
 .partner-carousel img:hover {
   transform: scale(1.1); /* Slight zoom effect */
 }
