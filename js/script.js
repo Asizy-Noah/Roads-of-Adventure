@@ -362,4 +362,41 @@ $(document).ready(function () {
           $(`.project[data-service="${serviceCategory}"]`).show();
       }
   });
+
+  // Partner Carousel JavaScript
+
+  // Initialize the Bootstrap carousel with options
+  const partnerCarousel = document.getElementById('partnerCarousel');
+  
+  if (partnerCarousel) {
+    // Create a Bootstrap carousel instance with custom options
+    const carousel = new bootstrap.Carousel(partnerCarousel, {
+      interval: 3000,      // Time between automatic cycling (in milliseconds)
+      wrap: true,          // Whether the carousel should cycle continuously
+      keyboard: true,      // Whether the carousel should react to keyboard events
+      pause: 'hover',      // Pauses the cycling on mouseenter
+      touch: true          // Whether the carousel should support left/right swipe on touchscreen devices
+    });
+    
+    // Optional: Add event listeners for carousel events
+    partnerCarousel.addEventListener('slide.bs.carousel', function() {
+      // Code to execute when the carousel starts sliding
+      // console.log('Carousel is sliding to the next item');
+    });
+    
+    partnerCarousel.addEventListener('slid.bs.carousel', function() {
+      // Code to execute after the carousel has completed sliding
+      // console.log('Carousel has slid to the next item');
+    });
+    
+    // Function to ensure the carousel keeps running even if user interacts with it
+    function ensureAutoplay() {
+      carousel.cycle();
+    }
+    
+    // Restart autoplay after user interaction (after 10 seconds)
+    partnerCarousel.addEventListener('mouseout', function() {
+      setTimeout(ensureAutoplay, 10000);
+    });
+  }
 });

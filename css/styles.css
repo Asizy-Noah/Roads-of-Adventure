@@ -508,3 +508,20 @@ a {
     max-width: 600px; 
   }
 }
+
+/* Partner Logos */
+.partner-logo {
+  max-width: 150px; /* Adjust logo size */
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.partner-logo:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Carousel Buttons */
+#partnerCarousel .carousel-control-prev,
+#partnerCarousel .carousel-control-next {
+  width: 5%;
+}
