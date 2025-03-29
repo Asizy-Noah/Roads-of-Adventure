@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -842,33 +846,15 @@
     <!-- Partner Logos Carousel -->
     <div class="container my-5">
         <h3 class="text-center mb-4">Our Partners</h3>
-        <div id="partnerCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner text-center">
-                <div class="carousel-item active">
-                    <a href="https://partner1.com" target="_blank">
-                        <img src="img/blog-1.jpg" class="d-block mx-auto partner-logo" alt="Partner 1">
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://partner2.com" target="_blank">
-                        <img src="img/blog-2.jpg" class="d-block mx-auto partner-logo" alt="Partner 2">
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://partner3.com" target="_blank">
-                        <img src="img/partner3.png" class="d-block mx-auto partner-logo" alt="Partner 3">
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://partner4.com" target="_blank">
-                        <img src="img/partner4.png" class="d-block mx-auto partner-logo" alt="Partner 4">
-                    </a>
-                </div>
-            </div>
-
-            
+        <div class="partner-carousel">
+            <div><a href="https://partner1.com" target="_blank"><img src="img/blog-1.jpg" alt="Partner 1"></a></div>
+            <div><a href="https://partner2.com" target="_blank"><img src="img/blog-2.jpg" alt="Partner 2"></a></div>
+            <div><a href="https://partner3.com" target="_blank"><img src="img/blog-3.jpg" alt="Partner 3"></a></div>
+            <div><a href="https://partner4.com" target="_blank"><img src="img/blog-100x100.jpg" alt="Partner 4"></a></div>
+            <div><a href="https://partner5.com" target="_blank"><img src="img/about-2.jpg" alt="Partner 5"></a></div>
         </div>
     </div>
+    
 
 
 
@@ -961,6 +947,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
+    <!-- Slick Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
@@ -1010,19 +999,33 @@
         
     <!-- Partners carousel -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let carousel = new bootstrap.Carousel(document.getElementById('partnerCarousel'), {
-                interval: 3000,  // Change slides every 2 seconds
-                ride: 'carousel',
-                responsive:{
-                    0:{ items:1 },
-                    700:{ items:2 },
-                    1000:{ items:3 },
-                    1300:{ items:4 }
-                }
+        $(document).ready(function(){
+            $('.partner-carousel').slick({
+                slidesToShow: 4,       // Show 4 logos at a time
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,   // Change logo every 2 sec
+                arrows: false,         // Hide prev/next arrows
+                dots: false,           // No navigation dots
+                infinite: true,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: { slidesToShow: 3 }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: { slidesToShow: 2 }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: { slidesToShow: 1 }
+                    }
+                ]
             });
         });
         </script>
+        
         
 </body>
 
