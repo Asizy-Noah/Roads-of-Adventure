@@ -637,7 +637,7 @@ a {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-section {
-      height: 60vh;
+      height: 90vh;
   }
   
   .sticky-form {
