@@ -525,3 +525,122 @@ a {
 .partner-carousel img:hover {
   transform: scale(1.1); /* Slight zoom effect */
 }
+
+/**** Country/Destinations *****/
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+/* Category Cards */
+.category-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+}
+
+.category-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Inquiry Form */
+.inquiry-form {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+}
+
+.sticky-form {
+  position: sticky;
+  top: 20px;
+}
+
+/* Package Cards */
+.package-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+}
+
+.package-img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.package-details {
+  padding: 20px;
+}
+
+.package-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.package-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.package-meta small {
+  display: flex;
+  align-items: center;
+}
+
+.package-meta i {
+  margin-right: 5px;
+  color: var(--primary-color);
+}
+
+.package-rating {
+  color: var(--primary-color);
+  margin-right: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+      height: 60vh;
+  }
+  
+  .sticky-form {
+      position: static;
+  }
+}
