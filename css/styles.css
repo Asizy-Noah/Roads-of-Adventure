@@ -573,6 +573,67 @@ a {
   object-fit: cover;
 }
 
+/* Categories Carousel */
+.categories-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) #f1f1f1;
+}
+
+.categories-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.categories-carousel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.categories-carousel::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.category-link {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-link:last-child {
+  margin-right: 0;
+}
+
+.category-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-color);
+}
+
+.category-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .category-link {
+      width: 250px;
+  }
+}
+
 /* Inquiry Form */
 .inquiry-form {
   background-color: white;
