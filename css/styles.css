@@ -634,6 +634,12 @@ a {
   }
 }
 
+/**** Description ****/
+.description-section {
+  max-width: 1600px;
+  margin: 2em auto;
+}
+
 /* Inquiry Form */
 .inquiry-form {
   background-color: white;
