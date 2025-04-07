@@ -198,6 +198,58 @@ a {
   font-weight: var(--font-semi-bold);
   transition: background-color .3s;
 }
+
+.nav__list {
+  opacity: 0;
+}
+.nav_grid {
+  position: absolute;
+  top: 0.8em;
+  opacity: 1;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: var(--white-color);
+  padding-top: 2em;
+  height: 100%;
+}
+
+.nav_destinations, .nav_other_links {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav_destinations {
+  padding: 0.5em 0;
+}
+
+.nav_list_grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.nav_list_grid li {
+  display: block;
+  text-align: center;
+  background-color: #dddbdb;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin: 2px;
+  border-radius: 5px;
+}
+
+.nav_list_grid li a span {
+  margin-right: 0.5em;
+}
+
+.nav_list_grid li a i {
+  margin-right: 0.5em;
+  font-size: 1.2rem;
+}
 }
 
 .nav__link {
@@ -340,57 +392,7 @@ a {
 }
 
 @media screen and (max-width: 576px) {
-  .nav__list {
-    opacity: 0;
-  }
-  .nav_grid {
-    position: absolute;
-    top: 0.8em;
-    opacity: 1;
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    background-color: var(--white-color);
-    padding-top: 2em;
-    height: 100%;
-  }
-
-  .nav_destinations, .nav_other_links {
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav_destinations {
-    padding: 0.5em 0;
-  }
-
-  .nav_list_grid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-  }
-
-  .nav_list_grid li {
-    display: block;
-    text-align: center;
-    background-color: #dddbdb;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    margin: 2px;
-    border-radius: 5px;
-  }
-
-  .nav_list_grid li a span {
-    margin-right: 0.5em;
-  }
-
-  .nav_list_grid li a i {
-    margin-right: 0.5em;
-    font-size: 1.2rem;
-  }
+  
 
   
 }
