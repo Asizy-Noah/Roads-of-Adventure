@@ -345,7 +345,7 @@ a {
   }
   .nav_grid {
     position: absolute;
-    top: 0em;
+    top: 0.8em;
     opacity: 1;
     width: 100%;
     display: flex;
