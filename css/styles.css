@@ -619,8 +619,12 @@ a {
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 100svh;
+  height: 80vh;
   overflow: hidden;
+}
+
+.hero-section.category {
+  height: 70vh;
 }
 
 .hero-image {
@@ -635,13 +639,36 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.171);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
   color: white;
+}
+
+.hero-overlay .btn {
+  margin-bottom: 8em;
+}
+
+.hero-section.category .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-section .catergory-heading {
+  margin-bottom: 3em;
 }
 
 /* Category Cards */
