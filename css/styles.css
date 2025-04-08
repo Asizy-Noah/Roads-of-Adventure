@@ -13,6 +13,20 @@
   --white-color: #fff;
   --body-color: hsl(220, 100%, 97%);
 
+ 
+    --primary-color: #59b46f;
+    --primary-color-light: #72ca88;
+    --primary-color-dark: #3d8a51;
+    --secondary-color: #3498db;
+    --danger-color: #e74c3c;
+    --white-color: #fff;
+    --body-color: #f8f9fa;
+    --text-color: #333;
+    --body-font: "Montserrat", sans-serif;
+ 
+  
+  
+
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
@@ -619,13 +633,13 @@ a {
 
 /**** Country/Destinations *****/
 /* Hero Section */
-.hero-section {
+.country-hero-section {
   position: relative;
   height: 80vh;
   overflow: hidden;
 }
 
-.hero-section.category {
+.category-hero-section {
   height: 70vh;
 }
 
@@ -635,7 +649,7 @@ a {
   object-fit: cover;
 }
 
-.hero-overlay {
+.country-hero-section .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -651,15 +665,15 @@ a {
 }
 
 .hero-overlay .btn {
-  margin-bottom: 8em;
+  margin-bottom: 3em;
 }
 
-.hero-section.category .hero-overlay {
+.category-hero-section .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 70vh;
   background: rgba(0, 0, 0, 0);
   display: flex;
   flex-direction: column;
@@ -669,8 +683,8 @@ a {
   color: white;
 }
 
-.hero-section .catergory-heading {
-  margin-bottom: 3em;
+.category-hero-section .catergory-heading {
+  margin-bottom: 2em;
 }
 
 /* Category Cards */
@@ -826,11 +840,352 @@ a {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .country-hero-section {
+      height: 90vh;
+  }
+
   .hero-section {
       height: 90vh;
   }
   
   .sticky-form {
       position: static;
+  }
+}
+
+/****** Itenerary ******/
+
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Tour Highlights */
+.highlights-section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.highlight-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.highlight-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+
+.highlight-list li:before {
+  content: '\f058';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary-color);
+}
+
+/* Itinerary Section */
+.itinerary-section {
+  margin-bottom: 50px;
+}
+
+.itinerary-item {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.itinerary-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.itinerary-header:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.itinerary-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.itinerary-header i {
+  transition: transform 0.3s ease;
+}
+
+.itinerary-content {
+  padding: 20px;
+  display: none;
+}
+
+.itinerary-content.active {
+  display: block;
+}
+
+.itinerary-details {
+  margin-bottom: 20px;
+}
+
+.itinerary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.itinerary-meta-item {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 10px;
+}
+
+.itinerary-meta-item h4 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+/* Cost Section */
+.cost-section {
+  margin-bottom: 50px;
+}
+
+.cost-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.cost-box {
+  flex: 1;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cost-box h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.cost-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cost-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+}
+
+.cost-includes li:before {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--secondary-color);
+}
+
+.cost-excludes li:before {
+  content: '\f00d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--danger-color);
+}
+
+/* Booking Form */
+.booking-form {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.booking-form h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(89, 180, 111, 0.25);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 100px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 10px 25px;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+}
+
+.sticky-form {
+  position: sticky;
+  top: 20px;
+}
+
+/* Related Packages */
+.related-section {
+  margin-bottom: 50px;
+}
+
+.package-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+  background-color: white;
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+}
+
+.package-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.package-content {
+  padding: 20px;
+}
+
+.package-title {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.package-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #777;
+}
+
+.package-meta i {
+  color: var(--primary-color);
+  margin-right: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+      font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+      font-size: 1.2rem;
+  }
+  
+  .sticky-form {
+      position: static;
+  }
+  
+  .cost-box {
+      min-width: 100%;
   }
 }
