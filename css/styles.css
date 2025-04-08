@@ -944,7 +944,7 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--primary-color);
+  color: var(--dark);
 }
 
 /* Itinerary Section */
@@ -1021,6 +1021,12 @@ a {
 /* Cost Section */
 .cost-section {
   margin-bottom: 50px;
+}
+
+.cost-section h3 {
+  padding: 0.5em;
+  border: 1px solid var(--dark);
+  border-radius: 5px;
 }
 
 .cost-container {
