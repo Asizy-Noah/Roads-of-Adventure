@@ -12,6 +12,8 @@
   --black-color-lighten: #84d197;
   --white-color: #fff;
   --body-color: hsl(220, 100%, 97%);
+  --gray: #cccaca ;
+  --dark: #212121;
 
  
     --primary-color: #59b46f;
@@ -907,7 +909,7 @@ a {
 }
 
 .section-title {
-  color: var(--primary-color);
+  color: var(--dark);
   margin-bottom: 30px;
   font-weight: 700;
   position: relative;
@@ -959,7 +961,7 @@ a {
 }
 
 .itinerary-header {
-  background-color: var(--primary-color);
+  background-color: var(--gray);
   color: white;
   padding: 15px 20px;
   cursor: pointer;
@@ -970,7 +972,7 @@ a {
 }
 
 .itinerary-header:hover {
-  background-color: var(--primary-color-dark);
+  background-color: var(--primary-color-light);
 }
 
 .itinerary-header h3 {
