@@ -1225,3 +1225,110 @@ textarea.form-control {
   object-fit: cover;
   object-position: center;
 }
+
+/***** Impacts sectio ****/
+/* Hero Section */
+.impact-hero-section {
+  position: relative;
+  height: 60vh;
+  background-image: url('../img/community-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 50px;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+/* Impact Containers */
+.impact-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.impact-container:hover {
+  transform: translateY(-5px);
+}
+
+.impact-content {
+  padding: 40px;
+}
+
+.text-container .impact-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.impact-heading {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.impact-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Image Styling */
+.impact-image-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.impact-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+}
+
+.impact-image img {
+  border-radius: 10px;
+}
+
+.impact-container:hover .impact-image {
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .impact-hero-section {
+      height: 40vh;
+  }
+  
+  .impact-content {
+      padding: 25px;
+  }
+  
+  .impact-text {
+      font-size: 1rem;
+  }
+  
+  .image-right-container .row {
+      flex-direction: column-reverse;
+  }
+  
+  .col-md-4 {
+      min-height: 250px;
+  }
+}
