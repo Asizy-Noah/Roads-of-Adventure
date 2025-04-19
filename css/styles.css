@@ -1431,7 +1431,7 @@ textarea.form-control {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .terms-hero-section {
-      height: 30vh;
+      height: 50vh;
   }
   
   .terms-content-section {
@@ -1450,7 +1450,7 @@ textarea.form-control {
 
 @media (max-width: 576px) {
   .terms-hero-section {
-      height: 25vh;
+      height: 45vh;
   }
   
   .terms-content-section {
