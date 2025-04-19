@@ -1332,3 +1332,136 @@ textarea.form-control {
       min-height: 250px;
   }
 }
+
+/****** Terms and Conditions ******/
+/* Hero Section */
+.terms-hero-section {
+  position: relative;
+  height: 55vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.terms-hero-section .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+/* Terms Content Section */
+.terms-content-section {
+  position: relative;
+  margin-top: -100px;
+  margin-bottom: 0; /* Creates overlap with hero section */
+  padding-bottom: 50px;
+}
+
+.terms-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.terms-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.terms-header h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.terms-body {
+  margin-bottom: 30px;
+}
+
+.terms-section {
+  margin-bottom: 30px;
+}
+
+.terms-section h3 {
+  color: var(--primary-color-dark);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.terms-section p {
+  margin-bottom: 15px;
+}
+
+.terms-section ul {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.terms-section li {
+  margin-bottom: 8px;
+}
+
+.terms-footer {
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-style: italic;
+}
+
+.terms-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.terms-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .terms-hero-section {
+      height: 30vh;
+  }
+  
+  .terms-content-section {
+      margin-top: -80px;
+  }
+  
+  .terms-container {
+      padding: 25px;
+      margin: 0 15px;
+  }
+  
+  .terms-header h2 {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .terms-hero-section {
+      height: 25vh;
+  }
+  
+  .terms-content-section {
+      margin-top: -50px;
+  }
+  
+  .terms-container {
+      padding: 20px;
+  }
+  
+  .terms-header h2 {
+      font-size: 1.5rem;
+  }
+}
