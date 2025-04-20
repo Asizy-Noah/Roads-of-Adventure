@@ -332,14 +332,15 @@ a {
 
 .dropdown__link, 
 .dropdown__sublink {
-  padding: 1.25rem ;
+  padding: 0.5em 1em;
   color: var(--black-color);
   background-color: var(--white-color);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   column-gap: 1.5rem;
   font-weight: var(--font-semi-bold);
   transition: background-color .3s;
+  width: 110%;
 }
 
 
