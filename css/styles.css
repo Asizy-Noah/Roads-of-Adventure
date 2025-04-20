@@ -520,7 +520,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 }
 
 @media screen and (max-width: 1118px) {
@@ -565,6 +565,30 @@ a {
 /***** About ******/
 .about-home {
   margin-top: 0;
+}
+
+.about-home .about-image {
+  width: 500px;
+  height: 200px;
+}
+
+.about-home .about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media screen and (max-width: 768px) {
+  .about-items{
+    margin-bottom: -4em;
+  } 
+}
+
+@media screen and (max-width: 991px) {
+  .about-home .about-image {
+    display: none;
+  } 
 }
 
 /* ---Destinations Carousel */
