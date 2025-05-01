@@ -332,14 +332,15 @@ a {
 
 .dropdown__link, 
 .dropdown__sublink {
-  padding: 0.5em 1em;
+  padding: 0.7em 1em;
   color: var(--black-color);
-  background-color: var(--white-color);
   display: flex;
   align-items: flex-start;
   column-gap: 1.5rem;
   font-weight: var(--font-semi-bold);
   transition: background-color .3s;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   width: 110%;
 }
 
@@ -352,18 +353,19 @@ a {
 
 .dropdown__link:hover, 
 .dropdown__sublink:hover {
-  background-color: #e6e5e5;
   text-decoration: none;
   color:yellow;
   transform: scale(110%);
-  border-radius: 5px;
 }
 
 .dropdown__menu, 
 .dropdown__submenu {
   max-height: 0;
   overflow: hidden;
+  background-color: var(--white-color);
   transition: max-height .4s ease-out;
+  border-radius: 10px;
+  margin-top: 0.1em;
 }
 
 /* Show dropdown menu & submenu */
