@@ -9304,6 +9304,10 @@ a.text-primary:hover, a.text-primary:focus {
   color: #527a20 !important;
 }
 
+a.text-dark:hover, a.text-dark:focus {
+  color: #59b46f !important;
+}
+
 .text-secondary {
   color: #f4faec !important;
 }
