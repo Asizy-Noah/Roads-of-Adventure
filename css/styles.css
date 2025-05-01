@@ -338,7 +338,7 @@ a {
   align-items: flex-start;
   column-gap: 1.5rem;
   font-weight: var(--font-semi-bold);
-  transition: background-color .3s;
+  transition: all .3s ease-out;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   width: 110%;
