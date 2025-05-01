@@ -681,6 +681,7 @@ a {
 .stars i {
   font-size: 12px;
   margin-right: 2px;
+  color: orange;
 }
 
 /* Ensure rating and button are same width */
@@ -690,7 +691,15 @@ a {
 }
 
 .book-btn {
-  margin-left: 10px; /* Adjust this value for the desired gap */
+  margin-left: 10px; 
+  border-radius: 5px;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  background: #59b46f;
+  transition: all 0.3 ease-out;
+}
+
+.book-btn:hover {
+  background: orange;
 }
 
 .rating-text {
