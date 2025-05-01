@@ -586,9 +586,7 @@ a {
 }
 
 @media screen and (max-width: 991px) {
-  .about-home .about-image {
-    display: none;
-  } 
+  
 }
 
 /* ---Destinations Carousel */
