@@ -631,6 +631,25 @@ a {
 
 /* ----Other Packages Carousel----- */
 /* Custom navigation buttons */
+.package-container {
+  position: relative;
+  width: 100%;
+}
+
+.p-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.package-header {
+  z-index: 2;
+  color: orange;
+}
+
 .package-carousel .owl-prev, .package-carousel .owl-next {
   position: absolute;
   top: 50%;
