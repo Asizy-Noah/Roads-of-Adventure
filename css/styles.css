@@ -569,6 +569,12 @@ a {
   margin-top: 0;
 }
 
+.about-home .row-about {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1em;
+}
+
 .about-home .about-image {
   width: 500px;
   height: 200px;
