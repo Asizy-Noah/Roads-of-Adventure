@@ -690,6 +690,14 @@ a {
   color: #59b46f;
 }
 
+.blog-item h4 a {
+  color: #212121;
+}
+
+.blog-item a:hover {
+  color: #59b46f;
+}
+
 /* Rating styling */
 .rating {
   display: flex;
