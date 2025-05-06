@@ -1,5 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Helvetica:wght@200;400&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -24,19 +24,19 @@
     --white-color: #fff;
     --body-color: #f8f9fa;
     --text-color: #333;
-    --body-font: "Montserrat", sans-serif;
+    --body-font: "Helvetica", sans-serif;
  
   
   
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: "Montserrat", sans-serif;
+  --body-font: "Helvetica", sans-serif; 
   --normal-font-size: .938rem;
 
   /*========== Font weight ==========*/
-  --font-regular: 400;
-  --font-semi-bold: 600;
+  --font-regular: 200;
+  --font-semi-bold: 400;
 
   /*========== z index ==========*/
   --z-tooltip: 10;
