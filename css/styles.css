@@ -1738,6 +1738,27 @@ textarea.form-control {
   box-shadow: 0 5px 15px rgba(89, 180, 111, 0.3);
 }
 
+/* Click here to pay button */
+.payment-margin-auto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-outline-orange {
+  color: orange;
+  border-color: orange;
+  transition: all 0.3s ease-in-out;
+  min-width: 40%;
+}
+
+.btn-outline-orange:hover {
+  color: #fff;
+  background-color: orange;
+  border-color: orange;
+}
+
 /* Enquiry Form */
 .enquiry-form {
   background-color: white;
