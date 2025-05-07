@@ -2692,6 +2692,18 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(66, 66, 66, 0.5);
 }
 
+.btn-outline-orange {
+  color: orange;
+  border-color: orange;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-orange:hover {
+  color: #fff;
+  background-color: orange;
+  border-color: orange;
+}
+
 .btn-outline-primary {
   color: #7AB730;
   border-color: #7AB730;
