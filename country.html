@@ -155,9 +155,12 @@
     <section class="country-hero-section">
         <img src="img/destination-1.jpg" alt="Uganda Safari" class="hero-image">
         <div class="hero-overlay">
-            <h4 class="display-3 text-white font-weight-bold mb-4">Best Uganda Safaris and Tours</h4>
-            <p class="lead mb-4">Experience the Pearl of Africa with our expertly crafted safari packages</p>
-            <a href="#packages" class="btn btn-primary btn-lg">Explore Packages</a>
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <div class="p-3" style="max-width: 900px;">
+                    <h4 class="display-4 text-white mb-md-4">Best Uganda Safaris and Tours  </h4>
+                    
+                </div>
+            </div>
         </div>
     </section>
     <!-- Hero Section End -->
@@ -285,60 +288,8 @@
             <!-- Inquiry Form Column -->
             <div class="col-lg-4">
                 <div class="inquiry-form sticky-form">
-                    <h3 class="text-primary mb-4">Inquire About Uganda Safaris</h3>
-                    
-                    <form id="inquiryForm">
-                        <div class="form-group">
-                            <label for="name">Full Name*</label>
-                            <input type="text" class="form-control" id="name" required>
-                        </div>
+                    <button class="btn-book-now btn-block py-3">Book Now</button>
                         
-                        <div class="form-group">
-                            <label for="email">Email Address*</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number*</label>
-                            <input type="tel" class="form-control" id="phone" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="country">Country of Residence*</label>
-                            <input type="text" class="form-control" id="country" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="budget">Travel Budget (USD)*</label>
-                            <select class="form-control" id="budget" required>
-                                <option value="">Select Budget Range</option>
-                                <option value="1000-2000">$1,000 - $2,000</option>
-                                <option value="2000-3000">$2,000 - $3,000</option>
-                                <option value="3000-5000">$3,000 - $5,000</option>
-                                <option value="5000+">$5,000+</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="travelers">Number of Travelers*</label>
-                            <select class="form-control" id="travelers" required>
-                                <option value="">Select Number</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6+">6+</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Additional Information</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your activities, interests, accommodation types (budget, mid-range, luxury) and any other information"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-block py-3">Submit Inquiry</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -630,13 +581,13 @@
                         
                         if (formTop <= 20 && descriptionBottom > 0) {
                             form.style.position = 'sticky';
-                            form.style.top = '20px';
+                            form.style.top = '150px';
                         } else if (descriptionBottom <= 0) {
                             form.style.position = 'relative';
                             form.style.top = `${descriptionHeight - formHeight}px`;
                         } else {
                             form.style.position = 'sticky';
-                            form.style.top = '20px';
+                            form.style.top = '150px';
                         }
                     });
                 }

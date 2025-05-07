@@ -914,10 +914,20 @@ a {
 
 /* Inquiry Form */
 .inquiry-form {
-  background-color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 25px;
+}
+
+.btn-book-now {
+  background: #59b46f;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-book-now:hover {
+  background: orange;
 }
 
 .sticky-form {
@@ -976,11 +986,11 @@ a {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .country-hero-section {
-      height: 90vh;
+      height: 55vh;
   }
 
   .hero-section {
-      height: 90vh;
+      height: 55vh;
   }
   
   .sticky-form {
