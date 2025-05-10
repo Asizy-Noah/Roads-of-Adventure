@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours | Roads of Adventure Safaris</title>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Custom CSS -->
+    <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="img/zz-logo.png" alt="Roads of Adventure Safaris" class="logo">
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="bookings.html" class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="tours.html" class="nav-link">
+                            <i class="fas fa-route"></i>
+                            <span>Tours</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="updates.html" class="nav-link">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Safari Updates</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reviews.html" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            <span>Client Reviews</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="countries.html" class="nav-link">
+                            <i class="fas fa-globe-africa"></i>
+                            <span>Countries</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="categories.html" class="nav-link">
+                            <i class="fas fa-tags"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="agents.html" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="subscribers.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Subscribers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item logout">
+                        <a href="logout.html" class="nav-link">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Tours</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <div class="profile-avatar">
+                            <span>JD</span>
+                        </div>
+                        <div class="profile-info">
+                            <span class="profile-name">John Doe</span>
+                            <span class="profile-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Tours Content -->
+            <div class="dashboard-content">
+                <div class="content-header">
+                    <h2 class="content-title">Manage Tours</h2>
+                    <div class="content-actions">
+                        <a href="add-tour.html" class="add-btn">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Type to search">
+                        </div>
+                        <div class="filter-container">
+                            <select class="filter-select">
+                                <option value="Uganda">Uganda</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Rwanda">Rwanda</option>
+                            </select>
+                        </div>
+                        <button class="refresh-btn">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Tours List -->
+                <div class="tours-list">
+                    <!-- Tour Item 1 -->
+                    <div class="tour-item">
+                        <div class="tour-image">
+                            <img src="img/kenyawls.jpg" alt="Gorilla Safari">
+                        </div>
+                        <div class="tour-info">
+                            <h3 class="tour-title">15 Days Gorilla Safari and Wildlife in Uganda</h3>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour Item 2 -->
+                    <div class="tour-item">
+                        <div class="tour-image">
+                            <img src="img/kenyawls.jpg" alt="Gorillas and Chimpanzees">
+                        </div>
+                        <div class="tour-info">
+                            <h3 class="tour-title">11 Days Gorillas and Chimpanzees Wildlife Safari, Uganda</h3>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour Item 3 -->
+                    <div class="tour-item">
+                        <div class="tour-image">
+                            <img src="img/kenyawls.jpg" alt="Primate Safari">
+                        </div>
+                        <div class="tour-info">
+                            <h3 class="tour-title">10 Days Uganda Ultimate Primate Safari</h3>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour Item 4 -->
+                    <div class="tour-item">
+                        <div class="tour-image">
+                            <img src="img/kenyawls.jpg" alt="Wildlife and Cultural Safari">
+                        </div>
+                        <div class="tour-info">
+                            <h3 class="tour-title">12 Days Best of Uganda Wildlife Encounter and Cultural Safari</h3>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour Item 5 -->
+                    <div class="tour-item">
+                        <div class="tour-image">
+                            <img src="img/kenyawls.jpg" alt="Gorilla and Chimpanzee Safari">
+                        </div>
+                        <div class="tour-info">
+                            <h3 class="tour-title">10 Days Uganda Safari Gorilla, Wildlife and Chimpanzees</h3>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour Item 6 -->
+                    <div class="tour-item">
+                        <div class="tour-image">
+                            <img src="img/kenyawls.jpg" alt="Murchison and Queen Elizabeth">
+                        </div>
+                        <div class="tour-info">
+                            <h3 class="tour-title">8 Days Murchison Chimpanzees Queen Elizabeth and Gorilla Safari</h3>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour Item 7 -->
+                    <div class="tour-item">
+                        <div class="tour-image">
+                            <img src="img/kenyawls.jpg" alt="Gorilla Trekking">
+                        </div>
+                        <div class="tour-info">
+                            <h3 class="tour-title">7 Days Queen Elizabeth Gorillas Trekking In Bwindi and Lake Mburo Safari</h3>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

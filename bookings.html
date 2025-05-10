@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings | Roads of Adventure Safaris</title>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Custom CSS -->
+    <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="img/zz-logo.png" alt="Roads of Adventure Safaris" class="logo">
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="bookings.html" class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tours.html" class="nav-link">
+                            <i class="fas fa-route"></i>
+                            <span>Tours</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="updates.html" class="nav-link">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Safari Updates</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reviews.html" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            <span>Client Reviews</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="countries.html" class="nav-link">
+                            <i class="fas fa-globe-africa"></i>
+                            <span>Countries</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="categories.html" class="nav-link">
+                            <i class="fas fa-tags"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="agents.html" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="subscribers.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Subscribers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item logout">
+                        <a href="logout.html" class="nav-link">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Bookings</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <div class="profile-avatar">
+                            <span>JD</span>
+                        </div>
+                        <div class="profile-info">
+                            <span class="profile-name">John Doe</span>
+                            <span class="profile-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Bookings Content -->
+            <div class="dashboard-content">
+                <div class="content-header">
+                    <h2 class="content-title">Manage Bookings</h2>
+                    <div class="content-actions">
+                        <div class="records-info">
+                            <span class="records-count">327</span>
+                            <span class="records-label">Records</span>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Type to search">
+                        </div>
+                        <div class="pagination-info">
+                            <input type="number" class="page-input" value="5" min="1">
+                            <span class="page-label">/Page</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bookings Table -->
+                <div class="table-container">
+                    <table class="data-table bookings-table">
+                        <thead>
+                            <tr>
+                                <th class="checkbox-column">
+                                    <input type="checkbox" id="selectAll">
+                                </th>
+                                <th class="sortable">
+                                    Name
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th class="sortable">
+                                    Email
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th class="sortable">
+                                    Phone
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th class="sortable">
+                                    Country
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th class="sortable">
+                                    Travel Plans
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th class="sortable">
+                                    Date
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>Madhuri Mukherjee</td>
+                                <td>madhurimukherjee05@gmail.com</td>
+                                <td>+254702172138</td>
+                                <td>Kenya</td>
+                                <td class="travel-plans-cell">
+                                    Hello, we are 2 pax (1 east African citizen and 1 east African resident) and are looking to do the gorilla trek. We have visited kigali before so we would like to switch out the kigali activities - is there anything else we can do on Friday or Sunday? We plan to arrive on Friday 16th from Kenya and leave on Sunday 18th. We are looking at mid range stay of less than USD 200 per night per room.
+                                </td>
+                                <td>04/05/2025 02:48 AM</td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>James Wilson</td>
+                                <td>jameswilson@gmail.com</td>
+                                <td>+16175551234</td>
+                                <td>USA</td>
+                                <td class="travel-plans-cell">
+                                    Planning to go around November time on a budget of $3000 for a 7-day safari in Tanzania. Looking for wildlife viewing in Serengeti and possibly Ngorongoro Crater. Would prefer mid-range accommodations.
+                                </td>
+                                <td>04/03/2025 11:23 PM</td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>Emma Johnson</td>
+                                <td>emmaj@outlook.com</td>
+                                <td>+447700900123</td>
+                                <td>UK</td>
+                                <td class="travel-plans-cell">
+                                    Family of 4 (2 adults, 2 children ages 10 and 12) interested in a 10-day safari in Kenya and Tanzania. Would like to see the Big Five and experience the Great Migration. Prefer luxury accommodations with family-friendly options.
+                                </td>
+                                <td>04/02/2025 09:15 AM</td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>Michael Chen</td>
+                                <td>mchen@company.com</td>
+                                <td>+61412345678</td>
+                                <td>Australia</td>
+                                <td class="travel-plans-cell">
+                                    Looking for a gorilla trekking experience in Uganda combined with some wildlife viewing. Planning for June 2025, solo traveler with a flexible budget. Interested in photography opportunities.
+                                </td>
+                                <td>04/01/2025 05:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>Sophie Dubois</td>
+                                <td>sophie.d@gmail.com</td>
+                                <td>+33612345678</td>
+                                <td>France</td>
+                                <td class="travel-plans-cell">
+                                    Honeymoon trip planned for September 2025. Looking for a romantic 12-day safari experience in Kenya with beach extension in Zanzibar. Prefer luxury tented camps and exclusive experiences.
+                                </td>
+                                <td>03/30/2025 10:45 AM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-btn">65</button>
+                    <button class="pagination-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
