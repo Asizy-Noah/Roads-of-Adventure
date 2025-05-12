@@ -1137,9 +1137,10 @@ textarea.form-control {
     }
 }
 
-/* Add these styles to your existing dashboard.css file */
 
-/* Blog Grid Styles */
+/* Update these styles in your existing dashboard.css file */
+
+/* Blog Grid Styles - Updated */
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1202,77 +1203,134 @@ textarea.form-control {
 }
 
 .blog-content {
-    padding: 20px;
+    padding: 15px 20px;
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .blog-title {
     font-size: 1.1rem;
     font-weight: 600;
-    margin: 0 0 10px;
+    margin: 0;
     color: var(--text-color);
     line-height: 1.4;
-}
-
-.blog-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 15px;
-    font-size: 0.85rem;
-    color: var(--text-light);
-}
-
-.blog-meta i {
-    margin-right: 5px;
-}
-
-.blog-excerpt {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    margin: 0;
-    flex-grow: 1;
 }
 
 .blog-actions {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-top: 1px solid var(--border-color);
 }
 
-/* Blog Form Styles */
-.blog-form {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Client Reviews Table Styles */
+.reviews-table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.blog-editor {
-    height: 400px;
-}
-
-.form-text {
-    display: block;
-    margin-top: 5px;
-    font-size: 0.85rem;
-}
-
-.text-muted {
-    color: var(--text-light);
-}
-
-/* SEO Section Styles */
-.section-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--primary-color-dark);
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+.reviews-table th,
+.reviews-table td {
+    padding: 15px;
+    text-align: left;
     border-bottom: 1px solid var(--border-color);
+}
+
+.reviews-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.reviews-table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.rating-stars {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    min-width: 80px;
+}
+
+.status-badge.pending {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.status-badge.posted {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.status-badge.disapproved {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.review-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.review-action-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.approve-btn {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success-color);
+}
+
+.approve-btn:hover {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.disapprove-btn {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger-color);
+}
+
+.disapprove-btn:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.edit-btn {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: #007bff;
+}
+
+.edit-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.delete-btn {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger-color);
+}
+
+.delete-btn:hover {
+    background-color: var(--danger-color);
+    color: white;
 }
 
 /* Responsive Adjustments */

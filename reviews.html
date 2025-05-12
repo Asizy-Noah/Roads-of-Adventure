@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Reviews | Roads of Adventure Safaris</title>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Custom CSS -->
+    <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="img/safari-logo.png" alt="Roads of Adventure Safaris" class="logo">
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="bookings.html" class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tours.html" class="nav-link">
+                            <i class="fas fa-route"></i>
+                            <span>Tours</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="updates.html" class="nav-link">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Safari Updates</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="reviews.html" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            <span>Client Reviews</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="countries.html" class="nav-link">
+                            <i class="fas fa-globe-africa"></i>
+                            <span>Countries</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="categories.html" class="nav-link">
+                            <i class="fas fa-tags"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="agents.html" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="subscribers.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Subscribers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item logout">
+                        <a href="logout.html" class="nav-link">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Client Reviews</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <div class="profile-avatar">
+                            <span>JD</span>
+                        </div>
+                        <div class="profile-info">
+                            <span class="profile-name">John Doe</span>
+                            <span class="profile-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Reviews Content -->
+            <div class="dashboard-content">
+                <div class="content-header">
+                    <h2 class="content-title">Manage Client Reviews</h2>
+                    <div class="content-actions">
+                        <div class="records-info">
+                            <span class="records-count">42</span>
+                            <span class="records-label">Records</span>
+                        </div>
+                        <div class="filter-container">
+                            <select class="filter-select" id="reviewStatusFilter">
+                                <option value="all">All Reviews</option>
+                                <option value="pending">Pending</option>
+                                <option value="posted">Posted</option>
+                                <option value="disapproved">Disapproved</option>
+                            </select>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Type to search" id="reviewSearchInput">
+                        </div>
+                        <div class="pagination-info">
+                            <input type="number" class="page-input" value="10" min="1">
+                            <span class="page-label">/Page</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reviews Table -->
+                <div class="table-container">
+                    <table class="data-table reviews-table">
+                        <thead>
+                            <tr>
+                                <th class="checkbox-column">
+                                    <input type="checkbox" id="selectAll">
+                                </th>
+                                <th class="sortable">
+                                    Name
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th class="sortable">
+                                    Rating
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th>Review</th>
+                                <th class="sortable">
+                                    Visiting Time
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th class="sortable">
+                                    Status
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-status="pending">
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>Sarah Johnson</td>
+                                <td>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </td>
+                                <td>Our gorilla trekking experience was absolutely incredible! The guides were knowledgeable and the accommodation was perfect. Highly recommend!</td>
+                                <td>April 2025</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <div class="review-actions">
+                                        <button class="review-action-btn approve-btn" title="Approve">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="review-action-btn disapprove-btn" title="Disapprove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                        <button class="review-action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="review-action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-status="posted">
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>Michael Brown</td>
+                                <td>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </td>
+                                <td>The safari was amazing, we saw all of the Big Five! Our guide was very knowledgeable and made sure we had the best experience possible.</td>
+                                <td>March 2025</td>
+                                <td><span class="status-badge posted">Posted</span></td>
+                                <td>
+                                    <div class="review-actions">
+                                        <button class="review-action-btn approve-btn" title="Approve" disabled>
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="review-action-btn disapprove-btn" title="Disapprove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                        <button class="review-action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="review-action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-status="disapproved">
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>David Wilson</td>
+                                <td>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </td>
+                                <td>The trip was disappointing. The accommodations were not as advertised and we didn't see many animals. Would not recommend.</td>
+                                <td>February 2025</td>
+                                <td><span class="status-badge disapproved">Disapproved</span></td>
+                                <td>
+                                    <div class="review-actions">
+                                        <button class="review-action-btn approve-btn" title="Approve">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="review-action-btn disapprove-btn" title="Disapprove" disabled>
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                        <button class="review-action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="review-action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-status="pending">
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>Emma Davis</td>
+                                <td>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </td>
+                                <td>The gorilla trek was the highlight of our trip! It was challenging but so worth it. The moment we saw the gorillas was unforgettable.</td>
+                                <td>April 2025</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <div class="review-actions">
+                                        <button class="review-action-btn approve-btn" title="Approve">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="review-action-btn disapprove-btn" title="Disapprove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                        <button class="review-action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="review-action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-status="posted">
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>James Taylor</td>
+                                <td>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </td>
+                                <td>Exceptional service from start to finish. The team went above and beyond to ensure we had the best safari experience. Will definitely be back!</td>
+                                <td>January 2025</td>
+                                <td><span class="status-badge posted">Posted</span></td>
+                                <td>
+                                    <div class="review-actions">
+                                        <button class="review-action-btn approve-btn" title="Approve" disabled>
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="review-action-btn disapprove-btn" title="Disapprove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                        <button class="review-action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="review-action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-status="posted">
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>Olivia Martinez</td>
+                                <td>
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </td>
+                                <td>Our family had an amazing time on the safari. The kids loved seeing all the animals up close, and the accommodations were perfect for families.</td>
+                                <td>December 2024</td>
+                                <td><span class="status-badge posted">Posted</span></td>
+                                <td>
+                                    <div class="review-actions">
+                                        <button class="review-action-btn approve-btn" title="Approve" disabled>
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="review-action-btn disapprove-btn" title="Disapprove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                        <button class="review-action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="review-action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/dashboard.js"></script>
+    <script src="js/reviews.js"></script>
+</body>
+</html>

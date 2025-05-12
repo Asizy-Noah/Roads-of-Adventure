@@ -131,17 +131,17 @@
                             <i class="fas fa-plus"></i>
                         </a>
                         <div class="filter-container">
-                            <select class="filter-select">
+                            <select class="filter-select" id="blogTypeFilter">
                                 <option value="all">All Posts</option>
                                 <option value="visible">Visible Posts</option>
                                 <option value="hidden">Hidden Posts</option>
                             </select>
                         </div>
                         <div class="search-container">
-                            <input type="text" class="search-input" placeholder="Type to search">
+                            <input type="text" class="search-input" placeholder="Type to search" id="blogSearchInput">
                         </div>
                         <div class="filter-container">
-                            <select class="filter-select">
+                            <select class="filter-select" id="blogSortFilter">
                                 <option value="newest">Sort by: Newest</option>
                                 <option value="oldest">Sort by: Oldest</option>
                                 <option value="title">Sort by: Title A-Z</option>
@@ -154,20 +154,13 @@
                 <!-- Blog Posts Grid -->
                 <div class="blog-grid">
                     <!-- Blog Post 1 -->
-                    <div class="blog-card">
+                    <div class="blog-card" data-status="visible">
                         <div class="blog-image">
                             <img src="img/blog-gorilla.jpg" alt="Gorilla Trekking">
                             <span class="blog-status visible">Visible</span>
                         </div>
                         <div class="blog-content">
                             <h3 class="blog-title">The Ultimate Guide to Gorilla Trekking in Uganda</h3>
-                            <div class="blog-meta">
-                                <span class="blog-date"><i class="far fa-calendar-alt"></i> May 10, 2025</span>
-                                <span class="blog-author"><i class="far fa-user"></i> John Doe</span>
-                            </div>
-                            <p class="blog-excerpt">
-                                Discover the best practices, tips, and what to expect when embarking on a gorilla trekking adventure in Uganda's lush forests...
-                            </p>
                         </div>
                         <div class="blog-actions">
                             <a href="edit-blog.html?id=1" class="action-btn edit-btn">
@@ -180,20 +173,13 @@
                     </div>
                     
                     <!-- Blog Post 2 -->
-                    <div class="blog-card">
+                    <div class="blog-card" data-status="visible">
                         <div class="blog-image">
                             <img src="img/blog-serengeti.jpg" alt="Serengeti Migration">
                             <span class="blog-status visible">Visible</span>
                         </div>
                         <div class="blog-content">
                             <h3 class="blog-title">Witnessing the Great Migration: A Serengeti Safari Experience</h3>
-                            <div class="blog-meta">
-                                <span class="blog-date"><i class="far fa-calendar-alt"></i> May 5, 2025</span>
-                                <span class="blog-author"><i class="far fa-user"></i> Jane Smith</span>
-                            </div>
-                            <p class="blog-excerpt">
-                                The Great Migration is one of nature's most spectacular events. Here's how to plan your safari to witness this incredible phenomenon...
-                            </p>
                         </div>
                         <div class="blog-actions">
                             <a href="edit-blog.html?id=2" class="action-btn edit-btn">
@@ -206,20 +192,13 @@
                     </div>
                     
                     <!-- Blog Post 3 -->
-                    <div class="blog-card">
+                    <div class="blog-card" data-status="hidden">
                         <div class="blog-image">
                             <img src="img/blog-masai-mara.jpg" alt="Masai Mara">
                             <span class="blog-status hidden">Hidden</span>
                         </div>
                         <div class="blog-content">
                             <h3 class="blog-title">Top 5 Luxury Lodges in the Masai Mara</h3>
-                            <div class="blog-meta">
-                                <span class="blog-date"><i class="far fa-calendar-alt"></i> April 28, 2025</span>
-                                <span class="blog-author"><i class="far fa-user"></i> Michael Brown</span>
-                            </div>
-                            <p class="blog-excerpt">
-                                Experience the ultimate safari luxury with our handpicked selection of the finest lodges in Kenya's iconic Masai Mara...
-                            </p>
                         </div>
                         <div class="blog-actions">
                             <a href="edit-blog.html?id=3" class="action-btn edit-btn">
@@ -232,20 +211,13 @@
                     </div>
                     
                     <!-- Blog Post 4 -->
-                    <div class="blog-card">
+                    <div class="blog-card" data-status="visible">
                         <div class="blog-image">
                             <img src="img/blog-photography.jpg" alt="Safari Photography">
                             <span class="blog-status visible">Visible</span>
                         </div>
                         <div class="blog-content">
                             <h3 class="blog-title">Safari Photography: Essential Tips for Capturing Wildlife</h3>
-                            <div class="blog-meta">
-                                <span class="blog-date"><i class="far fa-calendar-alt"></i> April 22, 2025</span>
-                                <span class="blog-author"><i class="far fa-user"></i> Sarah Johnson</span>
-                            </div>
-                            <p class="blog-excerpt">
-                                From camera settings to positioning techniques, learn how to capture stunning wildlife photographs on your next safari adventure...
-                            </p>
                         </div>
                         <div class="blog-actions">
                             <a href="edit-blog.html?id=4" class="action-btn edit-btn">
@@ -258,20 +230,13 @@
                     </div>
                     
                     <!-- Blog Post 5 -->
-                    <div class="blog-card">
+                    <div class="blog-card" data-status="visible">
                         <div class="blog-image">
                             <img src="img/blog-packing.jpg" alt="Safari Packing">
                             <span class="blog-status visible">Visible</span>
                         </div>
                         <div class="blog-content">
                             <h3 class="blog-title">The Ultimate Safari Packing List: What to Bring on Your Adventure</h3>
-                            <div class="blog-meta">
-                                <span class="blog-date"><i class="far fa-calendar-alt"></i> April 15, 2025</span>
-                                <span class="blog-author"><i class="far fa-user"></i> David Wilson</span>
-                            </div>
-                            <p class="blog-excerpt">
-                                Prepare for your African safari with our comprehensive packing guide, covering everything from clothing to camera gear...
-                            </p>
                         </div>
                         <div class="blog-actions">
                             <a href="edit-blog.html?id=5" class="action-btn edit-btn">
@@ -284,20 +249,13 @@
                     </div>
                     
                     <!-- Blog Post 6 -->
-                    <div class="blog-card">
+                    <div class="blog-card" data-status="hidden">
                         <div class="blog-image">
                             <img src="img/blog-bwindi.jpg" alt="Bwindi Forest">
                             <span class="blog-status hidden">Hidden</span>
                         </div>
                         <div class="blog-content">
                             <h3 class="blog-title">Exploring Bwindi Impenetrable Forest: Beyond Gorilla Trekking</h3>
-                            <div class="blog-meta">
-                                <span class="blog-date"><i class="far fa-calendar-alt"></i> April 8, 2025</span>
-                                <span class="blog-author"><i class="far fa-user"></i> Emma Davis</span>
-                            </div>
-                            <p class="blog-excerpt">
-                                While gorilla trekking is the main attraction, Bwindi offers many other incredible experiences. Discover the hidden gems of this UNESCO site...
-                            </p>
                         </div>
                         <div class="blog-actions">
                             <a href="edit-blog.html?id=6" class="action-btn edit-btn">
@@ -328,5 +286,6 @@
     
     <!-- JavaScript -->
     <script src="js/dashboard.js"></script>
+    <script src="js/blog.js"></script>
 </body>
 </html>
