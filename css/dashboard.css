@@ -1341,3 +1341,104 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
 }
+
+/* Add these styles to your existing dashboard.css file */
+
+/* Countries and Categories Grid Styles */
+.countries-grid,
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.country-card,
+.category-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.country-card:hover,
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.country-image,
+.category-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.country-image img,
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+}
+
+.country-card:hover .country-image img,
+.category-card:hover .category-image img {
+    transform: scale(1.05);
+}
+
+.country-content,
+.category-content {
+    padding: 15px 20px;
+    flex-grow: 1;
+}
+
+.country-title,
+.category-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 10px;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.country-overview {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.country-actions,
+.category-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Country and Category Form Styles */
+.country-form,
+.category-form {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .countries-grid,
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .countries-grid,
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}

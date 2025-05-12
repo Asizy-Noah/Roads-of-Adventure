@@ -567,3 +567,341 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Review filtering functionality
+    const reviewStatusFilter = document.getElementById('reviewStatusFilter');
+    const reviewSearchInput = document.getElementById('reviewSearchInput');
+    
+    if (reviewStatusFilter) {
+        // Filter reviews by status
+        reviewStatusFilter.addEventListener('change', filterReviews);
+    }
+    
+    if (reviewSearchInput) {
+        // Filter reviews by search term
+        reviewSearchInput.addEventListener('input', filterReviews);
+    }
+    
+    function filterReviews() {
+        const filterValue = reviewStatusFilter ? reviewStatusFilter.value : 'all';
+        const searchTerm = reviewSearchInput ? reviewSearchInput.value.toLowerCase() : '';
+        const reviewRows = document.querySelectorAll('.reviews-table tbody tr');
+        let visibleCount = 0;
+        
+        reviewRows.forEach(row => {
+            const status = row.getAttribute('data-status');
+            const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+            const review = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+            
+            // Check if row matches filter criteria
+            const matchesFilter = filterValue === 'all' || status === filterValue;
+            const matchesSearch = searchTerm === '' || 
+                                 name.includes(searchTerm) || 
+                                 review.includes(searchTerm);
+            
+            // Show/hide row based on filter
+            if (matchesFilter && matchesSearch) {
+                row.style.display = '';
+                visibleCount++;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+        
+        // Update record count
+        const recordsCount = document.querySelector('.records-count');
+        if (recordsCount) {
+            recordsCount.textContent = visibleCount;
+        }
+        
+        // Update pagination if needed
+        updatePagination();
+    }
+    
+    function updatePagination() {
+        // This is a placeholder for pagination update logic
+        // In a real application, you would update the pagination based on the filtered results
+    }
+    
+    // Handle select all checkbox
+    const selectAllCheckbox = document.getElementById('selectAll');
+    if (selectAllCheckbox) {
+        selectAllCheckbox.addEventListener('change', function() {
+            const checkboxes = document.querySelectorAll('.row-checkbox');
+            checkboxes.forEach(checkbox => {
+                const row = checkbox.closest('tr');
+                if (row.style.display !== 'none') {
+                    checkbox.checked = selectAllCheckbox.checked;
+                }
+            });
+        });
+    }
+    
+    // Handle review action buttons
+    const approveButtons = document.querySelectorAll('.approve-btn:not([disabled])');
+    const disapproveButtons = document.querySelectorAll('.disapprove-btn:not([disabled])');
+    const editButtons = document.querySelectorAll('.edit-btn');
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+    
+    // Approve review
+    approveButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const row = this.closest('tr');
+            const statusCell = row.querySelector('td:nth-child(6)');
+            
+            // Update status
+            row.setAttribute('data-status', 'posted');
+            statusCell.innerHTML = '<span class="status-badge posted">Posted</span>';
+            
+            // Disable approve button and enable disapprove button
+            this.disabled = true;
+            row.querySelector('.disapprove-btn').disabled = false;
+            
+            // Show success message
+            alert('Review approved and published successfully!');
+            
+            // Re-apply filters
+            filterReviews();
+        });
+    });
+    
+    // Disapprove review
+    disapproveButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const row = this.closest('tr');
+            const statusCell = row.querySelector('td:nth-child(6)');
+            
+            // Update status
+            row.setAttribute('data-status', 'disapproved');
+            statusCell.innerHTML = '<span class="status-badge disapproved">Disapproved</span>';
+            
+            // Disable disapprove button and enable approve button
+            this.disabled = true;
+            row.querySelector('.approve-btn').disabled = false;
+            
+            // Show success message
+            alert('Review disapproved successfully!');
+            
+            // Re-apply filters
+            filterReviews();
+        });
+    });
+    
+    // Edit review (placeholder)
+    editButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const row = this.closest('tr');
+            const name = row.querySelector('td:nth-child(2)').textContent;
+            
+            // In a real application, this would open an edit form or modal
+            alert(`Edit review from ${name}`);
+        });
+    });
+    
+    // Delete review
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const row = this.closest('tr');
+            const name = row.querySelector('td:nth-child(2)').textContent;
+            
+            if (confirm(`Are you sure you want to delete the review from ${name}? This action cannot be undone.`)) {
+                // In a real application, this would send a request to delete the review
+                // For this demo, we'll just remove the row from the DOM
+                row.style.opacity = '0';
+                setTimeout(() => {
+                    row.remove();
+                    
+                    // Update record count and re-apply filters
+                    filterReviews();
+                }, 300);
+            }
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Quill editor for category description if on add/edit page
+    if (document.getElementById('categoryDescriptionEditor')) {
+        // Initialize Quill
+        const Quill = window.Quill;
+        
+        const categoryDescriptionEditor = new Quill('#categoryDescriptionEditor', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{ 'color': [] }, { 'background': [] }],
+                    ['blockquote', 'code-block'],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    [{ 'indent': '-1'}, { 'indent': '+1' }],
+                    [{ 'align': [] }],
+                    ['link', 'image', 'video'],
+                    ['clean']
+                ]
+            },
+            placeholder: 'Write detailed category description here...'
+        });
+        
+        // If we're on the edit page, populate the editor with content
+        if (window.location.pathname.includes('edit-category')) {
+            // This is sample content for demonstration
+            const sampleContent = `
+                <h2>Wildlife Safari</h2>
+                <p>Wildlife safaris are the quintessential African experience, offering the opportunity to observe animals in their natural habitats. Kenya is renowned for its exceptional wildlife viewing opportunities, with diverse ecosystems supporting an incredible variety of species.</p>
+                
+                <h3>What to Expect</h3>
+                <p>On a wildlife safari in Kenya, you can expect:</p>
+                <ul>
+                    <li>Game drives in custom-designed safari vehicles</li>
+                    <li>Professional guides with extensive knowledge of local wildlife</li>
+                    <li>Opportunities to see the "Big Five" (lion, leopard, elephant, buffalo, and rhino)</li>
+                    <li>Spectacular landscapes from open savannahs to forests</li>
+                    <li>Accommodation options ranging from luxury lodges to tented camps</li>
+                </ul>
+                
+                <h3>Top Wildlife Destinations in Kenya</h3>
+                <p>Kenya offers several world-class wildlife destinations:</p>
+                <ul>
+                    <li><strong>Masai Mara National Reserve</strong> - Famous for the Great Migration and big cats</li>
+                    <li><strong>Amboseli National Park</strong> - Known for large elephant herds with Mt. Kilimanjaro as a backdrop</li>
+                    <li><strong>Samburu National Reserve</strong> - Home to unique species like the Grevy's zebra and reticulated giraffe</li>
+                    <li><strong>Lake Nakuru National Park</strong> - Famous for flamingos and rhino conservation</li>
+                </ul>
+                
+                <h3>Best Time for Wildlife Safaris</h3>
+                <p>While wildlife viewing is possible year-round, the best times for wildlife safaris in Kenya are:</p>
+                <ul>
+                    <li><strong>July to October</strong> - Dry season with excellent wildlife viewing and the Great Migration</li>
+                    <li><strong>January to February</strong> - Short dry season with good wildlife viewing and fewer tourists</li>
+                </ul>
+                
+                <h3>Conservation Efforts</h3>
+                <p>Kenya has been at the forefront of wildlife conservation in Africa, with numerous initiatives to protect endangered species and their habitats. Many safari operators contribute to these conservation efforts, making your safari not just an adventure but also a contribution to preserving Africa's wildlife heritage.</p>
+            `;
+            
+            categoryDescriptionEditor.clipboard.dangerouslyPasteHTML(sampleContent);
+            
+            // Show the current image preview
+            document.getElementById('imagePreview').style.display = 'block';
+        }
+        
+        // Handle form submission
+        const categoryForm = document.getElementById('addCategoryForm') || document.getElementById('editCategoryForm');
+        if (categoryForm) {
+            categoryForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get content from Quill editor and set to hidden input
+                document.getElementById('categoryDescription').value = categoryDescriptionEditor.root.innerHTML;
+                
+                // Show success message
+                if (window.location.pathname.includes('add-category')) {
+                    alert('Category added successfully!');
+                } else {
+                    alert('Category updated successfully!');
+                }
+                
+                // Redirect to categories page
+                window.location.href = 'categories.html';
+            });
+        }
+    }
+    
+    // Handle file upload preview
+    const coverImageInput = document.getElementById('coverImage');
+    if (coverImageInput) {
+        coverImageInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const preview = document.getElementById('imagePreview');
+                    preview.innerHTML = `<img src="${event.target.result}" alt="Preview">`;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+    
+    // Category filtering functionality
+    const categorySearchInput = document.getElementById('categorySearchInput');
+    const categoryCountryFilter = document.getElementById('categoryCountryFilter');
+    const refreshButton = document.getElementById('refreshCategories');
+    
+    // Function to filter categories based on search term and country
+    function filterCategories() {
+        const searchTerm = categorySearchInput ? categorySearchInput.value.toLowerCase() : '';
+        const countryFilter = categoryCountryFilter ? categoryCountryFilter.value : 'all';
+        const categoryCards = document.querySelectorAll('.category-card');
+        
+        categoryCards.forEach(card => {
+            const title = card.querySelector('.category-title').textContent.toLowerCase();
+            const country = card.getAttribute('data-country');
+            
+            // Check if card matches both search term and country filter
+            const matchesSearch = title.includes(searchTerm);
+            const matchesCountry = countryFilter === 'all' || country === countryFilter;
+            
+            // Show/hide card based on filters
+            if (matchesSearch && matchesCountry) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    
+    // Add event listeners for filtering
+    if (categorySearchInput) {
+        categorySearchInput.addEventListener('input', filterCategories);
+    }
+    
+    if (categoryCountryFilter) {
+        categoryCountryFilter.addEventListener('change', filterCategories);
+    }
+    
+    // Add event listener for refresh button
+    if (refreshButton) {
+        refreshButton.addEventListener('click', function() {
+            // Reset filters
+            if (categorySearchInput) categorySearchInput.value = '';
+            if (categoryCountryFilter) categoryCountryFilter.value = 'all';
+            
+            // Show all categories
+            const categoryCards = document.querySelectorAll('.category-card');
+            categoryCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            // Add a spinning animation to the refresh button
+            this.classList.add('refreshing');
+            setTimeout(() => {
+                this.classList.remove('refreshing');
+            }, 1000);
+        });
+    }
+    
+    // Handle delete buttons
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+    if (deleteButtons.length > 0) {
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.category-card');
+                const title = card.querySelector('.category-title').textContent;
+                
+                if (confirm(`Are you sure you want to delete "${title}"? This action cannot be undone.`)) {
+                    // In a real application, this would send a request to delete the item
+                    // For this demo, we'll just remove the card from the DOM
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.remove();
+                    }, 300);
+                }
+            });
+        });
+    }
+});
