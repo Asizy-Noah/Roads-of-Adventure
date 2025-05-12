@@ -342,3 +342,135 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Quill editor for blog content
+    var Quill = (typeof Quill !== 'undefined') ? Quill : {}; // Declare Quill if it's not already defined
+    const blogContentEditor = new Quill('#blogContentEditor', {
+        theme: 'snow',
+        modules: {
+            toolbar: [
+                [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ 'color': [] }, { 'background': [] }],
+                ['blockquote', 'code-block'],
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                [{ 'script': 'sub'}, { 'script': 'super' }],
+                [{ 'indent': '-1'}, { 'indent': '+1' }],
+                [{ 'direction': 'rtl' }],
+                [{ 'align': [] }],
+                ['link', 'image', 'video'],
+                ['clean']
+            ]
+        },
+        placeholder: 'Write your blog content here...'
+    });
+    
+    // If we're on the edit page, populate the editor with content
+    if (window.location.pathname.includes('edit-blog')) {
+        // This is sample content for demonstration
+        const sampleContent = `
+            <h2>Introduction to Gorilla Trekking</h2>
+            <p>Gorilla trekking is one of the most extraordinary wildlife experiences available in Africa. Uganda is home to over half of the world's remaining mountain gorillas, making it a premier destination for this once-in-a-lifetime adventure.</p>
+            
+            <h3>Best Time to Go</h3>
+            <p>While gorilla trekking is available year-round, the best times to visit are during the dry seasons:</p>
+            <ul>
+                <li>December to February</li>
+                <li>June to August</li>
+            </ul>
+            <p>During these periods, the trails are less muddy and the hiking conditions are more favorable.</p>
+            
+            <h3>Physical Preparation</h3>
+            <p>Gorilla trekking can be physically demanding. The trek can last anywhere from 30 minutes to 6 hours, depending on the location of the gorilla family. It's recommended to:</p>
+            <ul>
+                <li>Build up your stamina before the trip</li>
+                <li>Practice hiking on uneven terrain</li>
+                <li>Strengthen your legs with regular exercise</li>
+            </ul>
+            
+            <h2>What to Pack</h2>
+            <p>Proper preparation is essential for a comfortable gorilla trekking experience. Here's what you should bring:</p>
+            <ul>
+                <li>Hiking boots with good ankle support</li>
+                <li>Long-sleeved shirts and pants (for protection against nettles)</li>
+                <li>Rain jacket or poncho</li>
+                <li>Garden gloves (for grabbing onto vegetation)</li>
+                <li>Hat and sunscreen</li>
+                <li>Insect repellent</li>
+                <li>Camera with zoom lens (no flash photography allowed)</li>
+                <li>Water and snacks</li>
+            </ul>
+            
+            <h2>The Trekking Experience</h2>
+            <p>On the day of your trek, you'll gather at the park headquarters for a briefing. You'll be assigned to a gorilla family and grouped with other trekkers (maximum 8 per group). A guide will lead you through the forest, tracking the gorillas with the help of experienced trackers.</p>
+            
+            <p>Once you find the gorillas, you'll have one hour to observe them. This is a strictly enforced rule to minimize stress on the animals. During this time, maintain a distance of at least 7 meters, though the curious gorillas might approach you!</p>
+            
+            <h2>Conservation Efforts</h2>
+            <p>Your gorilla permit fee (currently $700 in Uganda) directly contributes to conservation efforts and supports local communities. Thanks to these initiatives, mountain gorilla numbers have increased from 620 in 1989 to over 1,000 today.</p>
+            
+            <h2>Conclusion</h2>
+            <p>Gorilla trekking is not just an adventure; it's a profound connection with our closest relatives in the animal kingdom. The experience of looking into the eyes of a wild gorilla is often described as life-changing. With proper preparation and respect for these magnificent creatures, your gorilla trekking experience in Uganda will be unforgettable.</p>
+        `;
+        
+        blogContentEditor.clipboard.dangerouslyPasteHTML(sampleContent);
+        
+        // Show the current image preview
+        document.getElementById('imagePreview').style.display = 'block';
+    }
+    
+    // Handle file upload preview
+    document.getElementById('featuredImage').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const preview = document.getElementById('imagePreview');
+                preview.innerHTML = `<img src="${event.target.result}" alt="Preview">`;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+    
+    // Handle form submission
+    const blogForm = document.getElementById('addBlogForm') || document.getElementById('editBlogForm');
+    if (blogForm) {
+        blogForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get content from Quill editor and set to hidden input
+            document.getElementById('blogContent').value = blogContentEditor.root.innerHTML;
+            
+            // Show success message
+            if (window.location.pathname.includes('add-blog')) {
+                alert('Blog post published successfully!');
+            } else {
+                alert('Blog post updated successfully!');
+            }
+            
+            // Redirect to updates page
+            window.location.href = 'updates.html';
+        });
+    }
+    
+    // Handle delete buttons on updates page
+    const deleteButtons = document.querySelectorAll('.delete-btn');
+    if (deleteButtons.length > 0) {
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (confirm('Are you sure you want to delete this blog post? This action cannot be undone.')) {
+                    // In a real application, this would send a request to delete the post
+                    // For this demo, we'll just remove the card from the DOM
+                    const blogCard = this.closest('.blog-card');
+                    blogCard.style.opacity = '0';
+                    setTimeout(() => {
+                        blogCard.remove();
+                    }, 300);
+                }
+            });
+        });
+    }
+});

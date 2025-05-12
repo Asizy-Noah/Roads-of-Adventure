@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Updates | Roads of Adventure Safaris</title>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Custom CSS -->
+    <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="img/safari-logo.png" alt="Roads of Adventure Safaris" class="logo">
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="bookings.html" class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tours.html" class="nav-link">
+                            <i class="fas fa-route"></i>
+                            <span>Tours</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="updates.html" class="nav-link">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Safari Updates</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reviews.html" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            <span>Client Reviews</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="countries.html" class="nav-link">
+                            <i class="fas fa-globe-africa"></i>
+                            <span>Countries</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="categories.html" class="nav-link">
+                            <i class="fas fa-tags"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="agents.html" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="subscribers.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Subscribers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item logout">
+                        <a href="logout.html" class="nav-link">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Safari Updates</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <div class="profile-avatar">
+                            <span>JD</span>
+                        </div>
+                        <div class="profile-info">
+                            <span class="profile-name">John Doe</span>
+                            <span class="profile-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Updates Content -->
+            <div class="dashboard-content">
+                <div class="content-header">
+                    <h2 class="content-title">Manage Safari Updates</h2>
+                    <div class="content-actions">
+                        <a href="add-blog.html" class="add-btn">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                        <div class="filter-container">
+                            <select class="filter-select">
+                                <option value="all">All Posts</option>
+                                <option value="visible">Visible Posts</option>
+                                <option value="hidden">Hidden Posts</option>
+                            </select>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Type to search">
+                        </div>
+                        <div class="filter-container">
+                            <select class="filter-select">
+                                <option value="newest">Sort by: Newest</option>
+                                <option value="oldest">Sort by: Oldest</option>
+                                <option value="title">Sort by: Title A-Z</option>
+                                <option value="title-desc">Sort by: Title Z-A</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog Posts Grid -->
+                <div class="blog-grid">
+                    <!-- Blog Post 1 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="img/blog-gorilla.jpg" alt="Gorilla Trekking">
+                            <span class="blog-status visible">Visible</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">The Ultimate Guide to Gorilla Trekking in Uganda</h3>
+                            <div class="blog-meta">
+                                <span class="blog-date"><i class="far fa-calendar-alt"></i> May 10, 2025</span>
+                                <span class="blog-author"><i class="far fa-user"></i> John Doe</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                Discover the best practices, tips, and what to expect when embarking on a gorilla trekking adventure in Uganda's lush forests...
+                            </p>
+                        </div>
+                        <div class="blog-actions">
+                            <a href="edit-blog.html?id=1" class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 2 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="img/blog-serengeti.jpg" alt="Serengeti Migration">
+                            <span class="blog-status visible">Visible</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">Witnessing the Great Migration: A Serengeti Safari Experience</h3>
+                            <div class="blog-meta">
+                                <span class="blog-date"><i class="far fa-calendar-alt"></i> May 5, 2025</span>
+                                <span class="blog-author"><i class="far fa-user"></i> Jane Smith</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                The Great Migration is one of nature's most spectacular events. Here's how to plan your safari to witness this incredible phenomenon...
+                            </p>
+                        </div>
+                        <div class="blog-actions">
+                            <a href="edit-blog.html?id=2" class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 3 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="img/blog-masai-mara.jpg" alt="Masai Mara">
+                            <span class="blog-status hidden">Hidden</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">Top 5 Luxury Lodges in the Masai Mara</h3>
+                            <div class="blog-meta">
+                                <span class="blog-date"><i class="far fa-calendar-alt"></i> April 28, 2025</span>
+                                <span class="blog-author"><i class="far fa-user"></i> Michael Brown</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                Experience the ultimate safari luxury with our handpicked selection of the finest lodges in Kenya's iconic Masai Mara...
+                            </p>
+                        </div>
+                        <div class="blog-actions">
+                            <a href="edit-blog.html?id=3" class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 4 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="img/blog-photography.jpg" alt="Safari Photography">
+                            <span class="blog-status visible">Visible</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">Safari Photography: Essential Tips for Capturing Wildlife</h3>
+                            <div class="blog-meta">
+                                <span class="blog-date"><i class="far fa-calendar-alt"></i> April 22, 2025</span>
+                                <span class="blog-author"><i class="far fa-user"></i> Sarah Johnson</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                From camera settings to positioning techniques, learn how to capture stunning wildlife photographs on your next safari adventure...
+                            </p>
+                        </div>
+                        <div class="blog-actions">
+                            <a href="edit-blog.html?id=4" class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 5 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="img/blog-packing.jpg" alt="Safari Packing">
+                            <span class="blog-status visible">Visible</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">The Ultimate Safari Packing List: What to Bring on Your Adventure</h3>
+                            <div class="blog-meta">
+                                <span class="blog-date"><i class="far fa-calendar-alt"></i> April 15, 2025</span>
+                                <span class="blog-author"><i class="far fa-user"></i> David Wilson</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                Prepare for your African safari with our comprehensive packing guide, covering everything from clothing to camera gear...
+                            </p>
+                        </div>
+                        <div class="blog-actions">
+                            <a href="edit-blog.html?id=5" class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 6 -->
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="img/blog-bwindi.jpg" alt="Bwindi Forest">
+                            <span class="blog-status hidden">Hidden</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">Exploring Bwindi Impenetrable Forest: Beyond Gorilla Trekking</h3>
+                            <div class="blog-meta">
+                                <span class="blog-date"><i class="far fa-calendar-alt"></i> April 8, 2025</span>
+                                <span class="blog-author"><i class="far fa-user"></i> Emma Davis</span>
+                            </div>
+                            <p class="blog-excerpt">
+                                While gorilla trekking is the main attraction, Bwindi offers many other incredible experiences. Discover the hidden gems of this UNESCO site...
+                            </p>
+                        </div>
+                        <div class="blog-actions">
+                            <a href="edit-blog.html?id=6" class="action-btn edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <button class="action-btn delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
