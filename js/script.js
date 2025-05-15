@@ -402,3 +402,77 @@ $(document).ready(function () {
 
   
 });
+
+
+// WhatsApp Chat Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatInput = document.querySelector('.chat-input input');
+        const chatSendBtn = document.querySelector('.chat-input button');
+        const chatBody = document.querySelector('.chat-body');
+        const whatsappNumber = '+256740384876'; // Replace with the desired WhatsApp number
+
+        // Send message when button is clicked
+        chatSendBtn.addEventListener('click', sendMessageToWhatsApp);
+
+        // Send message when Enter key is pressed
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessageToWhatsApp();
+            }
+        });
+
+        function sendMessageToWhatsApp() {
+            const message = chatInput.value.trim();
+            if (message) {
+                // Encode the message for the URL
+                const encodedMessage = encodeURIComponent(message);
+
+                // Construct the WhatsApp URL
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                // Open WhatsApp in a new tab/window
+                window.open(whatsappURL, '_blank');
+
+                // Optionally, you can still display the user's message in your local chat interface
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user-message';
+                userMessage.style.backgroundColor = '#f0f0f0';
+                userMessage.style.marginLeft = 'auto';
+                userMessage.style.textAlign = 'right';
+                userMessage.textContent = message;
+                chatBody.appendChild(userMessage);
+
+                chatInput.value = '';
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+        }
+
+    // Simulate response (remains the same for local chat display)
+    setTimeout(() => {
+        const responseMessage = document.createElement('div');
+        responseMessage.className = 'chat-message';
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }, 1000);
+            
+            // Pagination functionality
+            const paginationLinks = document.querySelectorAll('.pagination .page-link');
+            paginationLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all page items
+                    document.querySelectorAll('.pagination .page-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked page item
+                    if (!this.parentElement.classList.contains('disabled')) {
+                        this.parentElement.classList.add('active');
+                        
+                        // In a real application, this would load the next page of blog posts
+                        // For this demo, we'll just scroll to top
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+            });
+        });
