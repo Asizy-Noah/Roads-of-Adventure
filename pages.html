@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pages | Roads of Adventure Safaris</title>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Custom CSS -->
+    <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="img/safari-logo.png" alt="Roads of Adventure Safaris" class="logo">
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tours.html" class="nav-link">
+                            <i class="fas fa-route"></i>
+                            <span>Tours</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="bookings.html" class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="updates.html" class="nav-link">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Safari Updates</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reviews.html" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            <span>Client Reviews</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="countries.html" class="nav-link">
+                            <i class="fas fa-globe-africa"></i>
+                            <span>Countries</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="categories.html" class="nav-link">
+                            <i class="fas fa-tags"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="agents.html" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Agents</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="subscribers.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Subscribers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="pages.html" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Pages</span>
+                        </a>
+                    </li>
+                    <li class="nav-item logout">
+                        <a href="logout.html" class="nav-link">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Pages</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                    <div class="user-profile">
+                        <div class="profile-avatar">
+                            <span>JD</span>
+                        </div>
+                        <div class="profile-info">
+                            <span class="profile-name">John Doe</span>
+                            <span class="profile-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Pages Content -->
+            <div class="dashboard-content">
+                <div class="content-header">
+                    <div class="records-info">
+                        <span class="records-count">8</span>
+                        <span class="records-label">Records</span>
+                    </div>
+                    <div class="content-actions">
+                        <a href="add-page.html" class="add-btn">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Type to search" id="pageSearchInput">
+                        </div>
+                        <div class="pagination-info">
+                            <select class="page-select" id="pagesPerPage">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                            </select>
+                            <span class="page-label">/Page</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pages Table -->
+                <div class="table-container">
+                    <table class="data-table pages-table">
+                        <thead>
+                            <tr>
+                                <th class="checkbox-column">
+                                    <input type="checkbox" id="selectAll">
+                                </th>
+                                <th class="image-column">Image</th>
+                                <th class="sortable">
+                                    Title
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th class="sortable">
+                                    Description
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th class="sortable">
+                                    Keywords
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th class="sortable">
+                                    Last Modified
+                                    <span class="sort-icons">
+                                        <i class="fas fa-sort-down"></i>
+                                        <i class="fas fa-sort-up"></i>
+                                    </span>
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td class="image-column">
+                                    <img src="img/page-about.jpg" alt="About Us" class="table-image">
+                                </td>
+                                <td>About Us</td>
+                                <td>Learn about our safari company and our mission to provide exceptional wildlife experiences.</td>
+                                <td>about us, safari company, wildlife experiences, Uganda safari</td>
+                                <td>1st Feb 2024 00:29 AM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="edit-page.html?id=1" class="action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <button class="action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <a href="#" class="action-btn view-btn" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td class="image-column">
+                                    <img src="img/page-contact.jpg" alt="Contact Us" class="table-image">
+                                </td>
+                                <td>Contact Us</td>
+                                <td>Get in touch with our team to plan your safari adventure or ask any questions.</td>
+                                <td>contact us, safari planning, Uganda safari contact, travel inquiry</td>
+                                <td>30th Jan 2024 23:10 PM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="edit-page.html?id=2" class="action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <button class="action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <a href="#" class="action-btn view-btn" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td class="image-column">
+                                    <img src="img/page-terms.jpg" alt="Terms and Conditions" class="table-image">
+                                </td>
+                                <td>Terms and Conditions</td>
+                                <td>Our terms and conditions for booking and participating in our safari tours.</td>
+                                <td>terms and conditions, booking terms, safari terms, legal</td>
+                                <td>1st Feb 2024 00:32 AM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="edit-page.html?id=3" class="action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <button class="action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <a href="#" class="action-btn view-btn" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td class="image-column">
+                                    <img src="img/page-privacy.jpg" alt="Privacy Policy" class="table-image">
+                                </td>
+                                <td>Privacy Policy</td>
+                                <td>Our privacy policy explaining how we collect, use, and protect your personal information.</td>
+                                <td>privacy policy, data protection, personal information, GDPR</td>
+                                <td>28th Jan 2024 15:45 PM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="edit-page.html?id=4" class="action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <button class="action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <a href="#" class="action-btn view-btn" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td class="image-column">
+                                    <img src="img/page-faq.jpg" alt="FAQ" class="table-image">
+                                </td>
+                                <td>Frequently Asked Questions</td>
+                                <td>Answers to common questions about our safari tours, booking process, and travel requirements.</td>
+                                <td>FAQ, frequently asked questions, safari questions, travel FAQ</td>
+                                <td>25th Jan 2024 09:20 AM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="edit-page.html?id=5" class="action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <button class="action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <a href="#" class="action-btn view-btn" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td class="image-column">
+                                    <img src="img/page-community.jpg" alt="Community Support" class="table-image">
+                                </td>
+                                <td>Community Support</td>
+                                <td>Learn about our initiatives to support local communities and conservation efforts in Africa.</td>
+                                <td>community support, conservation, local communities, sustainable tourism</td>
+                                <td>20th Jan 2024 14:15 PM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="edit-page.html?id=6" class="action-btn edit-btn" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <button class="action-btn delete-btn" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <a href="#" class="action-btn view-btn" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/dashboard.js"></script>
+    <script src="js/pages.js"></script>
+</body>
+</html>

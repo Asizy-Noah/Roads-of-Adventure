@@ -86,6 +86,12 @@
                             <span>Subscribers</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="pages.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Pages</span>
+                        </a>
+                    </li>
                     <li class="nav-item logout">
                         <a href="logout.html" class="nav-link">
                             <i class="fas fa-sign-out-alt"></i>
@@ -263,6 +269,29 @@
                         <button type="button" id="addItineraryBtn" class="btn btn-outline">
                             <i class="fas fa-plus"></i> Add Itinerary
                         </button>
+                    </div>
+
+                    <!-- SEO Information -->
+                    <div class="form-section">
+                        <h3 class="section-title">SEO Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="seoTitle">SEO Title</label>
+                            <input type="text" id="seoTitle" name="seoTitle" class="form-control">
+                            <small class="form-text text-muted">Recommended length: 50-60 characters</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="seoDescription">Meta Description</label>
+                            <textarea id="seoDescription" name="seoDescription" class="form-control" rows="3"></textarea>
+                            <small class="form-text text-muted">Recommended length: 150-160 characters</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="seoKeywords">Meta Keywords</label>
+                            <input type="text" id="seoKeywords" name="seoKeywords" class="form-control">
+                            <small class="form-text text-muted">Separate keywords with commas</small>
+                        </div>
                     </div>
                     
                     <!-- Form Actions -->

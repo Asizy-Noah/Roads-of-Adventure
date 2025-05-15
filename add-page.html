@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Country | Roads of Adventure Safaris</title>
+    <title>Add Page | Roads of Adventure Safaris</title>
     
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -39,15 +39,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="bookings.html" class="nav-link">
-                            <i class="fas fa-calendar-check"></i>
-                            <span>Bookings</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="tours.html" class="nav-link">
                             <i class="fas fa-route"></i>
                             <span>Tours</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="bookings.html" class="nav-link">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Bookings</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -62,7 +62,7 @@
                             <span>Client Reviews</span>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a href="countries.html" class="nav-link">
                             <i class="fas fa-globe-africa"></i>
                             <span>Countries</span>
@@ -86,9 +86,9 @@
                             <span>Subscribers</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a href="pages.html" class="nav-link">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-file-alt"></i>
                             <span>Pages</span>
                         </a>
                     </li>
@@ -110,7 +110,7 @@
                     <button class="mobile-toggle" id="mobileToggle">
                         <i class="fas fa-bars"></i>
                     </button>
-                    <h1 class="page-title">Add Country</h1>
+                    <h1 class="page-title">Add Page</h1>
                 </div>
                 <div class="header-right">
                     <div class="notifications">
@@ -131,43 +131,84 @@
                 </div>
             </header>
             
-            <!-- Add Country Content -->
+            <!-- Add Page Content -->
             <div class="dashboard-content">
-                <form id="addCountryForm" class="country-form">
-                    <!-- Country Information -->
+                <form id="addPageForm" class="page-form">
+                    <!-- Basic Information -->
                     <div class="form-section">
-                        <div class="form-group">
-                            <label for="countryName">Country Name</label>
-                            <input type="text" id="countryName" name="name" class="form-control" required>
+                        <h3 class="section-title">Basic Information</h3>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="pageTitle">Page Title</label>
+                                <input type="text" id="pageTitle" name="title" class="form-control" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="pageSlug">URL Slug</label>
+                                <input type="text" id="pageSlug" name="slug" class="form-control" required>
+                                <small class="form-text text-muted">Example: about-us</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="pageType">Page Type</label>
+                                <select id="pageType" name="pageType" class="form-control" required>
+                                    <option value="">Select Page Type</option>
+                                    <option value="about">About Us</option>
+                                    <option value="contact">Contact Us</option>
+                                    <option value="terms">Terms & Conditions</option>
+                                    <option value="privacy">Privacy Policy</option>
+                                    <option value="faq">FAQ</option>
+                                    <option value="community">Community Support</option>
+                                    <option value="custom">Custom Page</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="pageStatus">Status</label>
+                                <select id="pageStatus" name="status" class="form-control" required>
+                                    <option value="published">Published</option>
+                                    <option value="draft">Draft</option>
+                                </select>
+                            </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="countryOverview">Country Overview</label>
-                            <textarea id="countryOverview" name="overview" class="form-control" rows="3" required></textarea>
-                            <small class="form-text text-muted">A brief overview of the country (100-150 characters)</small>
+                            <label for="pageDescription">Short Description</label>
+                            <textarea id="pageDescription" name="description" class="form-control" rows="3" maxlength="200" required></textarea>
+                            <small class="form-text text-muted">Brief description (max 200 characters)</small>
                         </div>
                         
                         <div class="form-group">
-                            <label for="countryDescription">Description</label>
-                            <div id="countryDescriptionEditor" class="editor-container"></div>
-                            <input type="hidden" name="description" id="countryDescription">
+                            <label for="pageContent">Page Content</label>
+                            <div id="pageContentEditor" class="editor-container"></div>
+                            <input type="hidden" name="content" id="pageContent">
                         </div>
-                        
+                    </div>
+                    
+                    <!-- Page Images -->
+                    <div class="form-section">
+                        <h3 class="section-title">Page Images</h3>
                         <div class="form-group">
-                            <label for="countrySummary">Country Summary</label>
-                            <textarea id="countrySummary" name="summary" class="form-control" rows="4"></textarea>
-                            <small class="form-text text-muted">A summary of key attractions and experiences</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="coverImage">Upload Cover Image</label>
+                            <label for="pageCoverImage">Cover Image</label>
                             <div class="file-upload-container">
-                                <input type="file" id="coverImage" name="coverImage" class="file-input" accept="image/*">
+                                <input type="file" id="pageCoverImage" name="coverImage" class="file-input" accept="image/*">
                                 <div class="file-upload-box">
                                     <i class="fas fa-cloud-upload-alt"></i>
                                     <span>Drag & drop image or click to browse</span>
                                 </div>
-                                <div class="file-preview" id="imagePreview"></div>
+                                <div class="file-preview" id="coverImagePreview"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pageGalleryImages">Additional Images</label>
+                            <div class="file-upload-container">
+                                <input type="file" id="pageGalleryImages" name="galleryImages" class="file-input" accept="image/*" multiple>
+                                <div class="file-upload-box">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Drag & drop images or click to browse (multiple)</span>
+                                </div>
+                                <div class="file-preview" id="galleryImagesPreview"></div>
                             </div>
                         </div>
                     </div>
@@ -175,7 +216,6 @@
                     <!-- SEO Information -->
                     <div class="form-section">
                         <h3 class="section-title">SEO Information</h3>
-                        
                         <div class="form-group">
                             <label for="seoTitle">SEO Title</label>
                             <input type="text" id="seoTitle" name="seoTitle" class="form-control">
@@ -193,12 +233,13 @@
                             <input type="text" id="seoKeywords" name="seoKeywords" class="form-control">
                             <small class="form-text text-muted">Separate keywords with commas</small>
                         </div>
+                        
                     </div>
                     
                     <!-- Form Actions -->
                     <div class="form-actions">
-                        <button type="button" class="btn btn-secondary" onclick="window.location.href='countries.html'">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Add Country</button>
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='pages.html'">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Page</button>
                     </div>
                 </form>
             </div>
@@ -210,6 +251,6 @@
     
     <!-- Custom JavaScript -->
     <script src="js/dashboard.js"></script>
-    <script src="js/countries.js"></script>
+    <script src="js/pages.js"></script>
 </body>
 </html>

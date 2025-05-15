@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookings | Roads of Adventure Safaris</title>
+    <title>Newsletter Subscribers | Roads of Adventure Safaris</title>
     
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo-container">
-                    <img src="img/zz-logo.png" alt="Roads of Adventure Safaris" class="logo">
+                    <img src="img/safari-logo.png" alt="Roads of Adventure Safaris" class="logo">
                 </div>
                 <button class="sidebar-toggle" id="sidebarToggle">
                     <i class="fas fa-bars"></i>
@@ -35,7 +35,7 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a href="bookings.html" class="nav-link">
                             <i class="fas fa-calendar-check"></i>
                             <span>Bookings</span>
@@ -77,7 +77,7 @@
                             <span>Agents</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a href="subscribers.html" class="nav-link">
                             <i class="fas fa-envelope"></i>
                             <span>Subscribers</span>
@@ -107,7 +107,7 @@
                     <button class="mobile-toggle" id="mobileToggle">
                         <i class="fas fa-bars"></i>
                     </button>
-                    <h1 class="page-title">Bookings</h1>
+                    <h1 class="page-title">Newsletter Subscribers</h1>
                 </div>
                 <div class="header-right">
                     <div class="notifications">
@@ -128,28 +128,32 @@
                 </div>
             </header>
             
-            <!-- Bookings Content -->
+            <!-- Subscribers Content -->
             <div class="dashboard-content">
                 <div class="content-header">
-                    <h2 class="content-title">Manage Bookings</h2>
+                    <div class="records-info">
+                        <span class="records-count">46</span>
+                        <span class="records-label">Records</span>
+                    </div>
                     <div class="content-actions">
-                        <div class="records-info">
-                            <span class="records-count">327</span>
-                            <span class="records-label">Records</span>
-                        </div>
                         <div class="search-container">
-                            <input type="text" class="search-input" placeholder="Type to search">
+                            <input type="text" class="search-input" placeholder="Type to search" id="subscriberSearchInput">
                         </div>
                         <div class="pagination-info">
-                            <input type="number" class="page-input" value="5" min="1">
+                            <select class="page-select" id="subscribersPerPage">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                            </select>
                             <span class="page-label">/Page</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Bookings Table -->
+                <!-- Subscribers Table -->
                 <div class="table-container">
-                    <table class="data-table bookings-table">
+                    <table class="data-table subscribers-table">
                         <thead>
                             <tr>
                                 <th class="checkbox-column">
@@ -170,21 +174,7 @@
                                     </span>
                                 </th>
                                 <th class="sortable">
-                                    Phone
-                                    <span class="sort-icons">
-                                        <i class="fas fa-sort-down"></i>
-                                        <i class="fas fa-sort-up"></i>
-                                    </span>
-                                </th>
-                                <th class="sortable">
-                                    Country
-                                    <span class="sort-icons">
-                                        <i class="fas fa-sort-down"></i>
-                                        <i class="fas fa-sort-up"></i>
-                                    </span>
-                                </th>
-                                <th class="sortable">
-                                    Travel Plans
+                                    Phone Number
                                     <span class="sort-icons">
                                         <i class="fas fa-sort-down"></i>
                                         <i class="fas fa-sort-up"></i>
@@ -197,6 +187,7 @@
                                         <i class="fas fa-sort-up"></i>
                                     </span>
                                 </th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -204,66 +195,99 @@
                                 <td class="checkbox-column">
                                     <input type="checkbox" class="row-checkbox">
                                 </td>
-                                <td>Madhuri Mukherjee</td>
-                                <td>madhurimukherjee05@gmail.com</td>
-                                <td>+254702172138</td>
-                                <td>Kenya</td>
-                                <td class="travel-plans-cell">
-                                    Hello, we are 2 pax (1 east African citizen and 1 east African resident) and are looking to do the gorilla trek. We have visited kigali before so we would like to switch out the kigali activities - is there anything else we can do on Friday or Sunday? We plan to arrive on Friday 16th from Kenya and leave on Sunday 18th. We are looking at mid range stay of less than USD 200 per night per room.
+                                <td></td>
+                                <td>prettypeg65@gmail.com</td>
+                                <td></td>
+                                <td>10/05/2025, 09:12 PM</td>
+                                <td>
+                                    <button class="action-btn delete-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
-                                <td>04/05/2025 02:48 AM</td>
                             </tr>
                             <tr>
                                 <td class="checkbox-column">
                                     <input type="checkbox" class="row-checkbox">
                                 </td>
-                                <td>James Wilson</td>
-                                <td>jameswilson@gmail.com</td>
-                                <td>+16175551234</td>
-                                <td>USA</td>
-                                <td class="travel-plans-cell">
-                                    Planning to go around November time on a budget of $3000 for a 7-day safari in Tanzania. Looking for wildlife viewing in Serengeti and possibly Ngorongoro Crater. Would prefer mid-range accommodations.
+                                <td>Lily Hazelwood</td>
+                                <td>lily.hazelwood05@gmail.com</td>
+                                <td></td>
+                                <td>10/05/2025, 09:12 PM</td>
+                                <td>
+                                    <button class="action-btn delete-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
-                                <td>04/03/2025 11:23 PM</td>
                             </tr>
                             <tr>
                                 <td class="checkbox-column">
                                     <input type="checkbox" class="row-checkbox">
                                 </td>
-                                <td>Emma Johnson</td>
-                                <td>emmaj@outlook.com</td>
-                                <td>+447700900123</td>
-                                <td>UK</td>
-                                <td class="travel-plans-cell">
-                                    Family of 4 (2 adults, 2 children ages 10 and 12) interested in a 10-day safari in Kenya and Tanzania. Would like to see the Big Five and experience the Great Migration. Prefer luxury accommodations with family-friendly options.
+                                <td>Namale Vivian</td>
+                                <td>namalevivian@gmail.com</td>
+                                <td></td>
+                                <td>28/04/2025, 08:38 AM</td>
+                                <td>
+                                    <button class="action-btn delete-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
-                                <td>04/02/2025 09:15 AM</td>
                             </tr>
                             <tr>
                                 <td class="checkbox-column">
                                     <input type="checkbox" class="row-checkbox">
                                 </td>
-                                <td>Michael Chen</td>
-                                <td>mchen@company.com</td>
-                                <td>+61412345678</td>
-                                <td>Australia</td>
-                                <td class="travel-plans-cell">
-                                    Looking for a gorilla trekking experience in Uganda combined with some wildlife viewing. Planning for June 2025, solo traveler with a flexible budget. Interested in photography opportunities.
+                                <td>Shania Lynn Bieri</td>
+                                <td>shania.bieri@gmail.com</td>
+                                <td></td>
+                                <td>25/04/2025, 07:02 AM</td>
+                                <td>
+                                    <button class="action-btn delete-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
-                                <td>04/01/2025 05:30 PM</td>
                             </tr>
                             <tr>
                                 <td class="checkbox-column">
                                     <input type="checkbox" class="row-checkbox">
                                 </td>
-                                <td>Sophie Dubois</td>
-                                <td>sophie.d@gmail.com</td>
-                                <td>+33612345678</td>
-                                <td>France</td>
-                                <td class="travel-plans-cell">
-                                    Honeymoon trip planned for September 2025. Looking for a romantic 12-day safari experience in Kenya with beach extension in Zanzibar. Prefer luxury tented camps and exclusive experiences.
+                                <td>Silambarasan Krishnamoorthy</td>
+                                <td>silambu3529@gmail.com</td>
+                                <td></td>
+                                <td>29/03/2025, 06:25 PM</td>
+                                <td>
+                                    <button class="action-btn delete-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </td>
-                                <td>03/30/2025 10:45 AM</td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>John Smith</td>
+                                <td>john.smith@example.com</td>
+                                <td>+1 555-123-4567</td>
+                                <td>15/03/2025, 02:45 PM</td>
+                                <td>
+                                    <button class="action-btn delete-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkbox-column">
+                                    <input type="checkbox" class="row-checkbox">
+                                </td>
+                                <td>Maria Garcia</td>
+                                <td>maria.garcia@example.com</td>
+                                <td>+34 612 345 678</td>
+                                <td>10/03/2025, 11:30 AM</td>
+                                <td>
+                                    <button class="action-btn delete-btn" title="Delete">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -277,8 +301,6 @@
                     <button class="pagination-btn active">1</button>
                     <button class="pagination-btn">2</button>
                     <button class="pagination-btn">3</button>
-                    <span class="pagination-ellipsis">...</span>
-                    <button class="pagination-btn">65</button>
                     <button class="pagination-btn">
                         <i class="fas fa-chevron-right"></i>
                     </button>
@@ -289,5 +311,6 @@
     
     <!-- JavaScript -->
     <script src="js/dashboard.js"></script>
+    <script src="js/subscribers.js"></script>
 </body>
 </html>

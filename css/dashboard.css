@@ -774,7 +774,7 @@ body {
     line-height: 1.5;
 }
 
-/* Tours Page Styles */
+/****************** Tours Page Styles ***************************/
 .add-btn {
     width: 40px;
     height: 40px;
@@ -821,7 +821,7 @@ body {
 /* Tours List Styles */
 .tours-list {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-bottom: 20px;
 }
@@ -1138,16 +1138,7 @@ textarea.form-control {
 }
 
 
-/* Update these styles in your existing dashboard.css file */
-
-/* Blog Grid Styles - Updated */
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 210px;
-    gap: 25px;
-    margin-bottom: 30px;
-}
+/********************* Blog Grid Styles - Updated *********************/
 
 .blog-card {
     background-color: white;
@@ -1342,9 +1333,7 @@ textarea.form-control {
     }
 }
 
-/* Add these styles to your existing dashboard.css file */
-
-/* Countries and Categories Grid Styles */
+/**************** Countries and Categories Grid Styles ***************/
 .countries-grid,
 .categories-grid {
     display: grid;
@@ -1441,4 +1430,243 @@ textarea.form-control {
     .categories-grid {
         grid-template-columns: 1fr;
     }
+}
+
+
+/************ Agents Grid Styles ****************/
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.agent-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+.agent-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.agent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.agent-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.agent-status {
+    font-size: 1.2rem;
+}
+
+.agent-status.active {
+    color: var(--success-color);
+}
+
+.agent-status.inactive {
+    color: var(--danger-color);
+}
+
+.agent-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.agent-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.website-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.website-link:hover {
+    text-decoration: underline;
+}
+
+.agent-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.deactivate-btn,
+.activate-btn {
+    width: 100%;
+    padding: 8px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.deactivate-btn {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.activate-btn {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.deactivate-btn:hover {
+    background-color: var(--danger-color-dark);
+}
+
+.activate-btn:hover {
+    background-color: var(--success-color-dark);
+}
+
+/* Subscribers Table Styles */
+.subscribers-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.subscribers-table th,
+.subscribers-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.subscribers-table th {
+    background-color: var(--table-header-bg);
+    color: var(--text-color);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.subscribers-table tbody tr:hover {
+    background-color: var(--hover-bg);
+}
+
+.subscribers-table .checkbox-column {
+    width: 40px;
+    text-align: center;
+}
+
+.subscribers-table .sortable {
+    cursor: pointer;
+    position: relative;
+}
+
+.subscribers-table .sort-icons {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.subscribers-table .sort-icons i {
+    display: block;
+    font-size: 0.7rem;
+    line-height: 0.7;
+    color: var(--text-muted);
+}
+
+.subscribers-table th.sort-asc .sort-icons .fa-sort-down,
+.subscribers-table th.sort-desc .sort-icons .fa-sort-up {
+    color: var(--primary-color);
+}
+
+.pagination-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.page-select {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: white;
+}
+
+.page-label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.records-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.records-count {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.records-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .agents-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .agents-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .subscribers-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Animation for refresh button */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.refresh-btn.refreshing i {
+    animation: spin 1s linear infinite;
 }
