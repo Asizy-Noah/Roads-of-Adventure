@@ -133,40 +133,62 @@
             
             <!-- Edit Tour Content -->
             <div class="dashboard-content">
-                <form id="editTourForm" class="add-tour-form">
+                <form id="addTourForm" class="add-tour-form">
                     <!-- Basic Information -->
                     <div class="form-section">
-                        <h3 class="section-title">Basic Information</h3>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="tourTitle">Tour Title</label>
-                                <input type="text" id="tourTitle" name="title" class="form-control" value="3-Day Gorilla Trekking Safari" required>
+                        <div class="form-group">
+                            <label for="tourTitle">Title</label>
+                            <input type="text" id="tourTitle" name="title" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tourOverview">Tour Overview</label>
+                            <div id="tourOverviewEditor" class="editor-container"></div>
+                            <input type="hidden" name="overview" id="tourOverview">
+                        </div>
+
+                        <div class="column-inputs">
+                            <div class="form-group">
+                            <label for="tourHighlights">Tour Highlights</label>
+                            <textarea id="tourHighlights" name="highlights" class="form-control" rows="6" placeholder="Write each highlight on a new line"></textarea>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="tourSlug">URL Slug</label>
-                                <input type="text" id="tourSlug" name="slug" class="form-control" value="3-day-gorilla-trekking-safari" required>
-                                <small class="form-text text-muted">Example: 3-day-gorilla-trekking-safari</small>
+                        
+                            <div class="form-group">
+                            <label for="coverImage">Upload Cover Image</label>
+                            <div class="file-upload-container">
+                                <input type="file" id="coverImage" name="coverImage" class="file-input" accept="image/*">
+                                <div class="file-upload-box">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Drag & drop image or click to browse</span>
+                                </div>
+                                <div class="file-preview" id="imagePreview"></div>
+                            </div>
                             </div>
                         </div>
                         
+                    </div>
+                    
+                    <!-- Tour Details -->
+                    <div class="form-section">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="tourCountry">Country</label>
-                                <select id="tourCountry" name="country" class="form-control" required>
+                                <label for="country">Country</label>
+                                <select id="country" name="country" class="form-control" required>
                                     <option value="">Select Country</option>
-                                    <option value="Uganda" selected>Uganda</option>
+                                    <option value="Uganda">Uganda</option>
                                     <option value="Kenya">Kenya</option>
                                     <option value="Tanzania">Tanzania</option>
                                     <option value="Rwanda">Rwanda</option>
                                 </select>
                             </div>
+                            
                             <div class="form-group col-md-6">
-                                <label for="tourCategory">Category</label>
-                                <select id="tourCategory" name="category" class="form-control" required>
+                                <label for="category">Category</label>
+                                <select id="category" name="category" class="form-control" required>
                                     <option value="">Select Category</option>
                                     <option value="Wildlife Safari">Wildlife Safari</option>
-                                    <option value="Gorilla Trekking" selected>Gorilla Trekking</option>
-                                    <option value="Cultural Tours">Cultural Tours</option>
+                                    <option value="Gorilla Trekking">Gorilla Trekking</option>
+                                    <option value="Cultural Tour">Cultural Tour</option>
                                     <option value="Adventure Safari">Adventure Safari</option>
                                     <option value="Luxury Safari">Luxury Safari</option>
                                 </select>
@@ -175,198 +197,112 @@
                         
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="tourDuration">Duration (Days)</label>
-                                <input type="number" id="tourDuration" name="duration" class="form-control" min="1" value="3" required>
+                                <label for="days">Number of Days</label>
+                                <input type="number" id="days" name="days" class="form-control" min="1" required>
                             </div>
+                            
                             <div class="form-group col-md-6">
-                                <label for="tourPrice">Price (USD)</label>
-                                <input type="number" id="tourPrice" name="price" class="form-control" min="0" step="0.01" value="1500" required>
+                                <label for="price">Price ($)</label>
+                                <input type="number" id="price" name="price" class="form-control" min="0" step="0.01" required>
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="tourShortDescription">Short Description</label>
-                            <textarea id="tourShortDescription" name="shortDescription" class="form-control" rows="3" maxlength="200" required>Experience the thrill of encountering mountain gorillas in their natural habitat on this 3-day safari to Bwindi Impenetrable Forest in Uganda.</textarea>
-                            <small class="form-text text-muted">Brief description (max 200 characters)</small>
-                        </div>
+                        <div class="column-inputs">
+                            <div class="form-group">
+                            <label for="priceIncludes">Cost Includes</label>
+                            <textarea id="priceIncludes" name="priceIncludes" class="form-control" rows="5" placeholder="Write each item on a new line"></textarea>
+                            </div>
                         
-                        <div class="form-group">
-                            <label for="tourDescription">Full Description</label>
-                            <div id="tourDescriptionEditor" class="editor-container"></div>
-                            <input type="hidden" name="description" id="tourDescription">
+                            <div class="form-group">
+                            <label for="priceExcludes">Cost Excludes</label>
+                            <textarea id="priceExcludes" name="priceExcludes" class="form-control" rows="5" placeholder="Write each item on a new line"></textarea>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Tour Images -->
+                    <!-- Itineraries Section -->
                     <div class="form-section">
-                        <h3 class="section-title">Tour Images</h3>
-                        <div class="form-group">
-                            <label for="tourFeaturedImage">Featured Image</label>
-                            <div class="file-upload-container">
-                                <input type="file" id="tourFeaturedImage" name="featuredImage" class="file-input" accept="image/*">
-                                <div class="file-upload-box">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <span>Drag & drop image or click to browse</span>
+                        <h3 class="section-title">Itineraries</h3>
+                        <div id="itinerariesContainer">
+                            <!-- Itinerary Template -->
+                            <div class="itinerary-item">
+                                <div class="itinerary-header">
+                                    <h4>Itinerary 1</h4>
+                                    <button type="button" class="remove-itinerary-btn" title="Remove Itinerary">
+                                        <i class="fas fa-times"></i>
+                                    </button>
                                 </div>
-                                <div class="file-preview" id="featuredImagePreview">
-                                    <img src="img/tour-gorilla.jpg" alt="Current Featured Image">
+                                
+                                <div class="form-row">
+                                    <div class="form-group col-md-2">
+                                        <label>Day</label>
+                                        <input type="number" name="itineraries[0][day]" class="form-control" min="1" value="1" required>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-10">
+                                        <label>Itinerary Title</label>
+                                        <input type="text" name="itineraries[0][title]" class="form-control" required>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="tourGalleryImages">Gallery Images</label>
-                            <div class="file-upload-container">
-                                <input type="file" id="tourGalleryImages" name="galleryImages" class="file-input" accept="image/*" multiple>
-                                <div class="file-upload-box">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <span>Drag & drop images or click to browse (multiple)</span>
+                                
+                                <div class="form-group">
+                                    <label>Itinerary Description</label>
+                                    <div class="itinerary-editor editor-container"></div>
+                                    <input type="hidden" name="itineraries[0][description]">
                                 </div>
-                                <div class="file-preview" id="galleryImagesPreview">
-                                    <div class="gallery-images">
-                                        <div class="gallery-image-item">
-                                            <img src="img/gallery-gorilla-1.jpg" alt="Gallery Image 1">
-                                            <button type="button" class="remove-image-btn"><i class="fas fa-times"></i></button>
-                                        </div>
-                                        <div class="gallery-image-item">
-                                            <img src="img/gallery-gorilla-2.jpg" alt="Gallery Image 2">
-                                            <button type="button" class="remove-image-btn"><i class="fas fa-times"></i></button>
-                                        </div>
-                                        <div class="gallery-image-item">
-                                            <img src="img/gallery-gorilla-3.jpg" alt="Gallery Image 3">
-                                            <button type="button" class="remove-image-btn"><i class="fas fa-times"></i></button>
-                                        </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Meal Plan</label>
+                                        <select name="itineraries[0][mealPlan]" class="form-control" required>
+                                            <option value="">Select Meal Plan</option>
+                                            <option value="Lunch & Dinner">Lunch & Dinner</option>
+                                            <option value="Breakfast, Lunch & Dinner">Breakfast, Lunch & Dinner</option>
+                                            <option value="Breakfast & Lunch">Breakfast & Lunch</option>
+                                            <option value="Breakfast Only">Breakfast Only</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label>Accommodation</label>
+                                        <input type="text" name="itineraries[0][accommodation]" class="form-control" placeholder="e.g., Serena Lodge or similar">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Itinerary -->
-                    <div class="form-section">
-                        <h3 class="section-title">Itinerary</h3>
-                        <div id="itineraryContainer">
-                            <!-- Itinerary items will be added here -->
-                            <div class="itinerary-item">
-                                <div class="itinerary-header">
-                                    <h4>Day 1</h4>
-                                    <button type="button" class="remove-itinerary-btn">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                                <div class="form-group">
-                                    <label>Title</label>
-                                    <input type="text" name="itinerary[0][title]" class="form-control" value="Arrival in Entebbe and Transfer to Bwindi">
-                                </div>
-                                <div class="form-group">
-                                    <label>Description</label>
-                                    <textarea name="itinerary[0][description]" class="form-control" rows="3">Upon arrival at Entebbe International Airport, you will be met by our representative and transferred to your accommodation in Bwindi Impenetrable Forest. The journey takes approximately 8-9 hours by road, offering stunning views of the Ugandan countryside. Alternatively, you can opt for a scheduled flight to a nearby airstrip (at additional cost). Overnight at your lodge.</textarea>
-                                </div>
-                            </div>
-                            
-                            <div class="itinerary-item">
-                                <div class="itinerary-header">
-                                    <h4>Day 2</h4>
-                                    <button type="button" class="remove-itinerary-btn">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                                <div class="form-group">
-                                    <label>Title</label>
-                                    <input type="text" name="itinerary[1][title]" class="form-control" value="Gorilla Trekking">
-                                </div>
-                                <div class="form-group">
-                                    <label>Description</label>
-                                    <textarea name="itinerary[1][description]" class="form-control" rows="3">After an early breakfast, head to the park headquarters for a briefing before beginning your gorilla trekking adventure. The trek can take anywhere from 30 minutes to several hours, depending on the location of the gorilla family. Once you find them, you'll spend a magical hour observing these gentle giants in their natural habitat. Return to your lodge for dinner and overnight stay.</textarea>
-                                </div>
-                            </div>
-                            
-                            <div class="itinerary-item">
-                                <div class="itinerary-header">
-                                    <h4>Day 3</h4>
-                                    <button type="button" class="remove-itinerary-btn">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                                <div class="form-group">
-                                    <label>Title</label>
-                                    <input type="text" name="itinerary[2][title]" class="form-control" value="Return to Entebbe">
-                                </div>
-                                <div class="form-group">
-                                    <label>Description</label>
-                                    <textarea name="itinerary[2][description]" class="form-control" rows="3">After breakfast, check out of your lodge and begin your journey back to Entebbe. Depending on your flight schedule, you may have time for a short city tour or shopping for souvenirs. Transfer to the airport for your onward flight.</textarea>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <button type="button" id="addItineraryBtn" class="btn btn-outline">
-                            <i class="fas fa-plus"></i> Add Day
+                            <i class="fas fa-plus"></i> Add Itinerary
                         </button>
                     </div>
-                    
-                    <!-- Inclusions & Exclusions -->
-                    <div class="form-section">
-                        <h3 class="section-title">Inclusions & Exclusions</h3>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="tourInclusions">Inclusions</label>
-                                <div id="tourInclusionsEditor" class="editor-container"></div>
-                                <input type="hidden" name="inclusions" id="tourInclusions">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="tourExclusions">Exclusions</label>
-                                <div id="tourExclusionsEditor" class="editor-container"></div>
-                                <input type="hidden" name="exclusions" id="tourExclusions">
-                            </div>
-                        </div>
-                    </div>
-                    
+
                     <!-- SEO Information -->
                     <div class="form-section">
                         <h3 class="section-title">SEO Information</h3>
+                        
                         <div class="form-group">
-                            <label for="seoTitle">SEO Title</label>
-                            <input type="text" id="seoTitle" name="seoTitle" class="form-control" value="3-Day Gorilla Trekking Safari in Uganda | Roads of Adventure Safaris">
+                            <label for="seoTitle">Meta Title</label>
+                            <input type="text" id="seoTitle" name="seoTitle" class="form-control">
                             <small class="form-text text-muted">Recommended length: 50-60 characters</small>
                         </div>
                         
                         <div class="form-group">
                             <label for="seoDescription">Meta Description</label>
-                            <textarea id="seoDescription" name="seoDescription" class="form-control" rows="3">Experience the thrill of encountering mountain gorillas in their natural habitat on this 3-day safari to Bwindi Impenetrable Forest in Uganda. Book your gorilla trekking adventure today!</textarea>
+                            <textarea id="seoDescription" name="seoDescription" class="form-control" rows="3"></textarea>
                             <small class="form-text text-muted">Recommended length: 150-160 characters</small>
                         </div>
                         
                         <div class="form-group">
                             <label for="seoKeywords">Meta Keywords</label>
-                            <input type="text" id="seoKeywords" name="seoKeywords" class="form-control" value="gorilla trekking, Uganda safari, Bwindi Impenetrable Forest, mountain gorillas, wildlife safari, adventure travel">
+                            <input type="text" id="seoKeywords" name="seoKeywords" class="form-control">
                             <small class="form-text text-muted">Separate keywords with commas</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="seoCanonicalUrl">Canonical URL (Optional)</label>
-                            <input type="url" id="seoCanonicalUrl" name="seoCanonicalUrl" class="form-control" value="https://www.roadsofadventuresafaris.com/tours/3-day-gorilla-trekking-safari">
-                            <small class="form-text text-muted">Use this if you have duplicate content on multiple URLs</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="seoOgImage">Social Media Image</label>
-                            <div class="file-upload-container">
-                                <input type="file" id="seoOgImage" name="seoOgImage" class="file-input" accept="image/*">
-                                <div class="file-upload-box">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <span>Drag & drop image or click to browse</span>
-                                </div>
-                                <div class="file-preview" id="seoOgImagePreview">
-                                    <img src="img/og-gorilla-safari.jpg" alt="Current Social Media Image">
-                                </div>
-                            </div>
-                            <small class="form-text text-muted">Recommended size: 1200 x 630 pixels</small>
                         </div>
                     </div>
                     
                     <!-- Form Actions -->
                     <div class="form-actions">
                         <button type="button" class="btn btn-secondary" onclick="window.location.href='tours.html'">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Update Tour</button>
+                        <button type="submit" class="btn btn-primary">Create Tour</button>
                     </div>
                 </form>
             </div>
